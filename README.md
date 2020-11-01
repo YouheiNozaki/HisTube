@@ -6,6 +6,7 @@ Next.js v10~
 TypeScript
 eslint,stylelint,prettierでの整形  
 stylelintはCSSmodulesの使用などを想定しているので、不必要な場合は削除  
+husky,lintstagedでcommit時にlinterを実行
 .vscodeでの設定を共有
 
 eslintなどの設定は「りあクト!TypeScript で始めるつらくない React 開発第3版【II. React 基礎編】」
@@ -15,5 +16,6 @@ eslintなどの設定は「りあクト!TypeScript で始めるつらくない R
 ## TODO
 verselへのデプロイ設定  
 next.config.jsの整備  
+GitHubActionでCIの設定
 
 data Fetchくらいは書いた方が良いかな。迷い中です。
