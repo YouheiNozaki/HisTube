@@ -13,6 +13,11 @@ module.exports = {
       'plugin:@typescript-eslint/eslint-recommended',
       'plugin:@typescript-eslint/recommended',
       'plugin:@typescript-eslint/recommended-requiring-type-checking',
+      'plugin:prettier/recommended',
+      'prettier',
+      'prettier/@typescript-eslint',
+      'prettier/react',
+      'prettier/standard'
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -28,6 +33,7 @@ module.exports = {
       '@typescript-eslint',
       'import',
       'jsx-a11y',
+      'prettier',
       'react',
       'react-hooks',
     ],
@@ -40,12 +46,7 @@ module.exports = {
           exceptAfterSingleLine: true,
         },
       ],
-      'no-void': [
-        'error',
-        {
-          allowAsStatement: true
-        }
-        ],
+      'no-void': "off",
       'padding-line-between-statements': [
         'error',
         {
