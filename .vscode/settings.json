@@ -3,8 +3,7 @@
   "less.validate": false,
   "scss.validate": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.eslint": true
   },
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
@@ -19,6 +18,9 @@
     "javascriptreact",
     { "language": "typescript", "autoFix": true },
     { "language": "typescriptreact", "autoFix": true }
+  ],
+  "eslint.workingDirectories": [
+    { "directory": "./", "changeProcessCWD": true }
   ],
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
