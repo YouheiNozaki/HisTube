@@ -1,21 +1,8 @@
-## Next.jsスターター
-Next.jsの環境構築をした最低限のスターター
+# 歴史の動画を集めたメディアサイト
 
-## 使用パッケージ
-Next.js v10~
-TypeScript
-eslint,stylelint,prettierでの整形  
-stylelintはCSSmodulesの使用などを想定しているので、不必要な場合は削除  
-husky,lintstagedでcommit時にlinterを実行
-.vscodeでの設定を共有
+## 使用技術
+Next.js
+microCMS
 
-eslintなどの設定は「りあクト!TypeScript で始めるつらくない React 開発第3版【II. React 基礎編】」
-の設定を参考にしています。  
-ルールはairbnbを基本に設定しています。
-
-## TODO
-verselへのデプロイ設定  
-next.config.jsの整備  
-GitHubActionでCIの設定
-
-data Fetchくらいは書いた方が良いかな。迷い中です。
+## Starter
+https://github.com/YouheiNozaki/next.js-starterv10
