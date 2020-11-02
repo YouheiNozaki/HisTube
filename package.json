@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "next": "10.0.0",
+    "postcss-preset-env": "^6.7.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
     "@types/eslint": "7.2.4",
