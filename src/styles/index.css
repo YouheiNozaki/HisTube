@@ -1,23 +1,24 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif;
+  @apply bg-primary;
+}
 
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */
 
 /* Write your own custom component styles here */
-.btn-blue {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
-}
 
 .hero {
-  @apply py-20;
+  @apply py-20 text-center;
 }
 
 .title {
   @apply text-5xl text-center;
-  color: #333;
   line-height: 1.15;
 }
 
@@ -26,3 +27,15 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+@layer components {
+  .btn {
+    @apply font-bold py-2 px-4 rounded;
+  }
+
+  .btn-black {
+    @apply bg-black text-white;
+  }
+  .btn-black:hover {
+    @apply bg-black opacity-75;
+  }
+}
