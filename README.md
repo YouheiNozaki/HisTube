@@ -1,5 +1,7 @@
 # Next.js×microCMS×tailwindcss のスターター
 
+参考記事: https://panda-program.com/posts/nextjs-tailwind-css
+
 ## 使用技術
 
 Next.js  
