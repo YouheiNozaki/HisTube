@@ -29,8 +29,8 @@ https://ics.media/entry/200317/
 
 ###tailwindcss
 
-CSS の purge は設定済。
-tailwind.config.js で theme をカスタマイズすることができます
-参考: https://tailwindcss.com/docs/configuration
-グローバルなスタイルは src/styles/index.css を参照してください
+CSS の purge は設定済。  
+tailwind.config.js で theme をカスタマイズすることができます  
+参考: https://tailwindcss.com/docs/configuration  
+グローバルなスタイルは src/styles/index.css を参照してください  
 参考: https://tailwindcss.com/docs/adding-base-styles
