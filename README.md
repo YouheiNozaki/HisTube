@@ -1,11 +1,10 @@
-# Next.js×microCMS×tailwindcss のスターター
+# Next.js×tailwindcss のスターター
 
 参考記事: https://panda-program.com/posts/nextjs-tailwind-css
 
 ## 使用技術
 
-Next.js  
-microCMS  
+Next.js   
 tailwindCSS  
 PostCSS  
 autoprefixer  
@@ -27,7 +26,7 @@ https://ics.media/entry/200317/
 
 ## 使い方
 
-###tailwindcss
+### tailwindcss
 
 CSS の purge は設定済。  
 tailwind.config.js で theme をカスタマイズすることができます  
