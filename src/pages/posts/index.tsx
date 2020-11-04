@@ -1,8 +1,7 @@
 /* eslint-disable react/no-danger */
-/* eslint-disable react/self-closing-comp */
 import { Fragment } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import type { PostType } from 'types/post';
+import type { ContentType, PostType } from 'types/post';
 import { http, request } from 'lib/fetch';
 
 import { Header } from 'component/header';
@@ -11,11 +10,10 @@ import Link from 'next/link';
 export const getStaticProps: GetStaticProps<{
   posts: PostType[];
 }> = async () => {
-  const posts = await http<PostType[]>(request);
+  const posts = await http<ContentType>(request);
 
   return {
     props: {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       posts: posts.contents,
     },
   };
@@ -34,7 +32,7 @@ const Post = ({
             <h2>{post.title}</h2>
             <p>{post.createdAt}</p>
             <p>{post.updatedAt}</p>
-            <div dangerouslySetInnerHTML={{ __html: `${post.video}` }}></div>
+            <div dangerouslySetInnerHTML={{ __html: `${post.video}` }} />
             <Link href={`posts/${post.id}`}>
               <a href={`posts/${post.id}`}>詳しく見る</a>
             </Link>
