@@ -3,12 +3,16 @@ export type PostTag = {
   name: string;
 };
 
-export type Post = {
+export type PostType = {
   id: string;
   createdAt: string;
   updatedAt: string;
   title: string;
   video: string;
   tag: PostTag;
-  content: string;
+  content?: string;
+};
+
+export type ContentType = {
+  contents: PostType[];
 };
