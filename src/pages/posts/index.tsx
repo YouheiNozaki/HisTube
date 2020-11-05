@@ -28,7 +28,7 @@ const Post = ({
       <h1>動画一覧ページ</h1>
       {posts.map((post) => {
         return (
-          <Fragment key={post.tag.id}>
+          <Fragment key={post.id}>
             <h2>{post.title}</h2>
             <p>{post.createdAt}</p>
             <p>{post.updatedAt}</p>
