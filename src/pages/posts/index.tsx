@@ -1,11 +1,13 @@
 /* eslint-disable react/no-danger */
 import { Fragment } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import type { ContentType, PostType } from 'types/post';
-import { http, request } from 'lib/fetch';
-
-import { Header } from 'component/header';
 import Link from 'next/link';
+import dayjs from 'dayjs';
+
+import { http, request } from 'lib/fetch';
+import { Header } from 'component/header';
+
+import type { ContentType, PostType } from 'types/post';
 
 export const getStaticProps: GetStaticProps<{
   posts: PostType[];
@@ -30,8 +32,8 @@ const Post = ({
         return (
           <Fragment key={post.id}>
             <h2>{post.title}</h2>
-            <p>{post.createdAt}</p>
-            <p>{post.updatedAt}</p>
+            <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
+            <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
             <div dangerouslySetInnerHTML={{ __html: `${post.video}` }} />
             <Link href={`posts/${post.id}`}>
               <a href={`posts/${post.id}`}>詳しく見る</a>
