@@ -31,12 +31,13 @@ const Post = ({
       {posts.map((post) => {
         return (
           <Fragment key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
-            <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
-            <div dangerouslySetInnerHTML={{ __html: `${post.video}` }} />
             <Link href={`posts/${post.id}`}>
-              <a href={`posts/${post.id}`}>詳しく見る</a>
+              <a>
+                <h2>{post.title}</h2>
+                <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
+                <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
+                <div dangerouslySetInnerHTML={{ __html: `${post.video}` }} />
+              </a>
             </Link>
           </Fragment>
         );

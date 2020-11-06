@@ -9,7 +9,7 @@ export const Header = (): JSX.Element => {
           <Image src="/girl.png" alt="サイトのロゴ" width={60} height={60} />
         </Link>
         <Link href="/posts">
-          <a href="/posts">動画一覧</a>
+          <a>動画一覧</a>
         </Link>
       </div>
     </header>
