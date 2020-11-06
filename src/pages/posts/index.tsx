@@ -32,7 +32,7 @@ const Post = ({
         return (
           <Fragment key={post.id}>
             <Link href={`posts/${post.id}`}>
-              <a>
+              <a href={`posts/${post.id}`}>
                 <h2>{post.title}</h2>
                 <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
                 <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
