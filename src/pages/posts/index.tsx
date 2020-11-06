@@ -3,8 +3,11 @@ import { Fragment } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import dayjs from 'dayjs';
+// import unified from 'unified';
+// import parse from 'rehype-parse';
 
 import { http, request } from 'lib/fetch';
+// import { renderAst } from 'lib/renderHtml';
 import { Header } from 'component/header';
 
 import type { ContentType, PostType } from 'types/post';
