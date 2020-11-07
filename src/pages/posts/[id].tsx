@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import {
   GetStaticPaths,
   GetStaticProps,
@@ -9,6 +8,7 @@ import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
 
 import { http, request } from 'lib/fetch';
+import { renderAst } from 'lib/renderHtml';
 import { Header } from 'component/header';
 
 import type { ContentType, PostType } from 'types/post';
@@ -65,8 +65,10 @@ const PostDatail = ({
         <p>{post.tag.name}</p>
         <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
         <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
-        <div dangerouslySetInnerHTML={{ __html: `${post.video}` }} />
-        <div dangerouslySetInnerHTML={{ __html: `${post.content}` }} />
+        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
+        <div>{renderAst(post.video)}</div>
+        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
+        <div>{renderAst(post.content)}</div>
       </div>
     </>
   );
