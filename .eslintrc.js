@@ -55,6 +55,7 @@ module.exports = {
         next: 'return',
       },
     ],
+    '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -91,6 +92,7 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
   },
   overrides: [
     {
