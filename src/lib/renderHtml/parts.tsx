@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
-export const IfFlame: FC = ({ children }) => {
-  return <div>{children}</div>;
+export const H1: FC = ({ children }) => {
+  return <h1 className="text-secondary">{children}</h1>;
 };
