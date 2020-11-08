@@ -4,14 +4,14 @@ import Image from 'next/image';
 export const Header = (): JSX.Element => {
   return (
     <header>
-      <div>
+      <div className="m-4 grid grid-cols-2">
         <Link href="/">
           <a href="/">
-            <Image src="/girl.png" alt="サイトのロゴ" width={60} height={60} />
+            <Image src="/logo.png" alt="サイトのロゴ" width={210} height={40} />
           </a>
         </Link>
         <Link href="/posts">
-          <a>動画一覧</a>
+          <a>start</a>
         </Link>
       </div>
     </header>
