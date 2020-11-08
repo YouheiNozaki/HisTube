@@ -4,14 +4,21 @@ import Image from 'next/image';
 export const Header = (): JSX.Element => {
   return (
     <header>
-      <div className="m-4 grid grid-cols-2">
+      <div className="m-4 flex items-center justify-between">
         <Link href="/">
           <a href="/">
-            <Image src="/logo.png" alt="サイトのロゴ" width={210} height={40} />
+            <Image src="/logo.png" alt="サイトのロゴ" width={240} height={50} />
           </a>
         </Link>
         <Link href="/posts">
-          <a>start</a>
+          <a className="mr-1 p-3">
+            <button
+              type="button"
+              className="btn btn-black btn-black:hover shadow-md"
+            >
+              START
+            </button>
+          </a>
         </Link>
       </div>
     </header>
