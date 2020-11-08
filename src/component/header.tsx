@@ -12,10 +12,7 @@ export const Header = (): JSX.Element => {
         </Link>
         <Link href="/posts">
           <a className="mr-1 p-3">
-            <button
-              type="button"
-              className="btn btn-black btn-black:hover shadow-md"
-            >
+            <button type="button" className="btn btn-black btn-black:hover">
               START
             </button>
           </a>
