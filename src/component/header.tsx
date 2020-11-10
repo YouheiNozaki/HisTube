@@ -6,7 +6,7 @@ import { Nav } from 'component/nav';
 export const Header = (): JSX.Element => {
   return (
     <header>
-      <div className="m-4 flex items-center justify-between">
+      <div>
         <Link href="/">
           <a href="/">
             <Image src="/logo.png" alt="サイトのロゴ" width={240} height={50} />
