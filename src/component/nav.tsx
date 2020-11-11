@@ -5,12 +5,14 @@ export const Nav = (): JSX.Element => {
     <header>
       <div>
         <Link href="/posts">
+          <a href="/posts">一覧</a>
+        </Link>
+        <Link href="/posts">
           <a href="/posts">世界史</a>
         </Link>
         <Link href="/posts">
           <a href="/posts">日本史</a>
         </Link>
-        <p>オリジナル</p>
       </div>
     </header>
   );
