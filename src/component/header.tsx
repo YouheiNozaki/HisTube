@@ -29,8 +29,8 @@ const StyledHeader = styled(Component)`
   }
 `;
 
-export const ContainerHeader: React.FC<Props> = (props) => {
+export const Header: React.FC<Props> = (props) => {
   const { children } = props;
 
-  return <StyledHeader {...props}>{children}</StyledHeader>;
+  return <StyledHeader>{children}</StyledHeader>;
 };

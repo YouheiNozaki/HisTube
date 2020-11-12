@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 
 import { http, request } from 'lib/fetch';
 import { renderAst } from 'lib/renderHtml';
-import { ContainerHeader } from 'component/header';
+import { Header } from 'component/header';
 
 import type { ContentType, PostType } from 'types/post';
 
@@ -26,7 +26,7 @@ const Post = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactNode => {
   return (
     <div>
-      <ContainerHeader />
+      <Header />
       <h1>動画一覧ページ</h1>
       {posts.map((post) => {
         return (

@@ -1,9 +1,9 @@
-import { ContainerHeader } from 'component/header';
+import { Header } from 'component/header';
 
 export default function Home(): React.ReactNode {
   return (
     <>
-      <ContainerHeader />
+      <Header />
       <div>Hello!!!</div>
     </>
   );
