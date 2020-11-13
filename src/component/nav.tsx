@@ -1,17 +1,36 @@
 import Link from 'next/link';
+import styled from 'styled-components';
 
-export const Nav = (): JSX.Element => {
+type Props = {
+  className?: string;
+};
+
+const Component: React.FC<Props> = ({ className }): JSX.Element => {
   return (
-    <header>
-      <div>
-        <Link href="/posts">
-          <a href="/posts">世界史</a>
-        </Link>
-        <Link href="/posts">
-          <a href="/posts">日本史</a>
-        </Link>
-        <p>オリジナル</p>
-      </div>
-    </header>
+    <div className={className}>
+      <Link href="/posts">
+        <a href="/posts">一覧</a>
+      </Link>
+      <Link href="/posts">
+        <a href="/posts">世界史</a>
+      </Link>
+      <Link href="/posts">
+        <a href="/posts">日本史</a>
+      </Link>
+    </div>
   );
+};
+
+const StyledComponent = styled(Component)`
+  display: flex;
+  justify-content: space-between;
+  & a {
+    text-decoration: none;
+  }
+`;
+
+export const Nav: React.FC<Props> = (props) => {
+  const { children } = props;
+
+  return <StyledComponent>{children}</StyledComponent>;
 };

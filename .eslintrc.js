@@ -84,7 +84,7 @@ module.exports = {
       },
     ],
     'react/jsx-props-no-spreading': [
-      'error',
+      'off',
       {
         html: 'enforce',
         custom: 'enforce',
