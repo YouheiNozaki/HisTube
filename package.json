@@ -14,14 +14,12 @@
   "dependencies": {
     "dayjs": "^1.9.5",
     "next": "10.0.0",
-    "postcss-preset-env": "^6.7.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^3.11.0",
     "rehype-parse": "^7.0.1",
     "rehype-react": "^6.1.0",
     "styled-components": "^5.2.1",
-    "tailwindcss": "^1.9.6",
     "unified": "^9.2.0"
   },
   "devDependencies": {
