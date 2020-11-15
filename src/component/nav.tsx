@@ -27,7 +27,7 @@ const StyledComponent = styled(Component)`
   justify-content: space-around;
   & a {
     color: ${theme.colors.purple[700]};
-    font-weight: ;
+    font-weight: ${theme.fontWeights.medium};
     margin: 4px;
     text-decoration: none;
   }
