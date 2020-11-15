@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { theme } from 'theme';
 
 type Props = {
   className?: string;
@@ -23,8 +24,11 @@ const Component: React.FC<Props> = ({ className }): JSX.Element => {
 
 const StyledComponent = styled(Component)`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   & a {
+    color: ${theme.colors.purple[700]};
+    font-weight: ;
+    margin: 4px;
     text-decoration: none;
   }
 `;
