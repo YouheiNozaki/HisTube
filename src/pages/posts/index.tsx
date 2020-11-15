@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 
 import { http, request } from 'lib/fetch';
 import { renderAst } from 'lib/renderHtml';
-import { Header } from 'component/header';
+import { Layout } from 'component/layout';
 
 import type { ContentType, PostType } from 'types/post';
 
@@ -25,8 +25,7 @@ const Post = ({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactNode => {
   return (
-    <div>
-      <Header />
+    <Layout>
       <h1>動画一覧ページ</h1>
       {posts.map((post) => {
         return (
@@ -43,7 +42,7 @@ const Post = ({
           </Fragment>
         );
       })}
-    </div>
+    </Layout>
   );
 };
 
