@@ -1,10 +1,11 @@
-import { Header } from 'component/header';
+import { Layout } from 'component/layout';
 
 export default function Home(): React.ReactNode {
   return (
     <>
-      <Header />
-      <div>Hello!!!</div>
+      <Layout>
+        <div>Hello!!!</div>
+      </Layout>
     </>
   );
 }

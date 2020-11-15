@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Nav } from 'component/nav';
 import styled from 'styled-components';
 
 type Props = {
@@ -18,7 +17,6 @@ const Component: React.FC<Props> = ({ className }): JSX.Element => {
           </a>
         </Link>
       </div>
-      <Nav />
     </header>
   );
 };

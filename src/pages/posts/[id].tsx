@@ -9,7 +9,7 @@ import dayjs from 'dayjs';
 
 import { http, request } from 'lib/fetch';
 import { renderAst } from 'lib/renderHtml';
-import { Header } from 'component/header';
+import { Layout } from 'component/layout';
 
 import type { ContentType, PostType } from 'types/post';
 
@@ -58,19 +58,16 @@ const PostDatail = ({
   }
 
   return (
-    <>
-      <Header />
-      <div>
-        <h1>{post.title}</h1>
-        <p>{post.tag.name}</p>
-        <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
-        <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
-        <div>{renderAst(post.video)}</div>
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
-        <div>{renderAst(post.content)}</div>
-      </div>
-    </>
+    <Layout>
+      <h1>{post.title}</h1>
+      <p>{post.tag.name}</p>
+      <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
+      <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
+      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
+      <div>{renderAst(post.video)}</div>
+      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
+      <div>{renderAst(post.content)}</div>
+    </Layout>
   );
 };
 
