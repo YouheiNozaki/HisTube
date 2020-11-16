@@ -24,14 +24,13 @@ const Component: React.FC<Props> = ({ className }): JSX.Element => {
 
 const StyledHeader = styled(Component)`
   border-bottom: solid 1px ${theme.colors.gray[200]};
-  /* box-shadow: 0 1px 0 ${theme.colors.blackAlpha[100]}; */
   box-shadow: ${theme.shadows.none};
   & .header-logo {
     margin: 6px;
   }
 `;
 
-export const Header: React.FC<Props> = (props) => {
+export const Header: React.FC = (props) => {
   const { children } = props;
 
   return <StyledHeader>{children}</StyledHeader>;
