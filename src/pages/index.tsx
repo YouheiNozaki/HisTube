@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { theme } from 'theme';
 import { Layout } from 'component/layout';
 
 type Props = {
@@ -34,14 +33,16 @@ const Component: React.FC<Props> = ({ className }): JSX.Element => {
 const StyledComponent = styled(Component)`
   margin: 16px;
   & .main-title {
-    font-size: ${theme.fontSizes['3xl']};
-    color: ${theme.colors.purple[900]};
+    margin-top: 32px;
+    font-size: ${(props) => props.theme.fontSizes['4xl']};
+    color: ${(props) => props.theme.colors.purple[900]};
   }
   & .main-title-span {
     display: block;
-    font-size: ${theme.fontSizes.xl};
-    font-weight: ${theme.fontWeights.semibold};
-    color: ${theme.colors.purple[600]};
+    margin-top: 8px;
+    font-size: ${(props) => props.theme.fontSizes['2xl']};
+    font-weight: ${(props) => props.theme.fontWeights.semibold};
+    color: ${(props) => props.theme.colors.purple[600]};
   }
 `;
 

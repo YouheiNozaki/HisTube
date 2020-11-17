@@ -66,6 +66,12 @@ module.exports = {
         varsIgnorePattern: '_',
       },
     ],
+    '@typescript-eslint/no-empty-interface': [
+      'off',
+      {
+        allowSingleExtends: false,
+      },
+    ],
     'import/extensions': [
       'error',
       'ignorePackages',
