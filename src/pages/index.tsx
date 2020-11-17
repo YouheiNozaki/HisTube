@@ -33,12 +33,14 @@ const Component: React.FC<Props> = ({ className }): JSX.Element => {
 const StyledComponent = styled(Component)`
   margin: 16px;
   & .main-title {
-    font-size: ${(props) => props.theme.fontSizes['3xl']};
+    margin-top: 32px;
+    font-size: ${(props) => props.theme.fontSizes['4xl']};
     color: ${(props) => props.theme.colors.purple[900]};
   }
   & .main-title-span {
     display: block;
-    font-size: ${(props) => props.theme.fontSizes.xl};
+    margin-top: 8px;
+    font-size: ${(props) => props.theme.fontSizes['2xl']};
     font-weight: ${(props) => props.theme.fontWeights.semibold};
     color: ${(props) => props.theme.colors.purple[600]};
   }
