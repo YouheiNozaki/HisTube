@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { theme } from 'theme';
 
 import styled from 'styled-components';
 
@@ -23,8 +22,8 @@ const Component: React.FC<Props> = ({ className }): JSX.Element => {
 };
 
 const StyledHeader = styled(Component)`
-  border-bottom: solid 1px ${theme.colors.gray[200]};
-  box-shadow: ${theme.shadows.none};
+  border-bottom: solid 1px ${(props) => props.theme.colors.gray[200]};
+  box-shadow: ${(props) => props.theme.shadows.none};
   & .header-logo {
     margin: 6px;
   }

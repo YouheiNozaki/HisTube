@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { theme } from 'theme';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,8 +20,10 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
   return (
     <>
       <GlobalStyle />
-      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
