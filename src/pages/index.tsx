@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import { Layout } from 'component/layout';
@@ -27,7 +28,12 @@ const Component: React.FC<Props> = ({ className }) => {
           />
         </section>
         <section className="main-link">
-          <Button text="動画一覧を見る" className="main-link-button" />
+          <p className="main-link-text">さあ、はじめよう！！</p>
+          <Link href="/posts">
+            <a href="/posts">
+              <Button text="動画一覧を見る" className="main-link-button" />
+            </a>
+          </Link>
         </section>
       </div>
     </Layout>
@@ -51,6 +57,10 @@ const StyledComponent = styled(Component)`
   & .main-link {
     margin: 40px 0px;
     text-align: center;
+  }
+  & .main-link-text {
+    color: ${(props) => props.theme.colors.purple[900]};
+    font-weight: ${(props) => props.theme.fontWeights.semibold};
   }
   & .main-link-button {
     padding: 12px 20px;

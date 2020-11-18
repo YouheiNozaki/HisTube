@@ -17,7 +17,6 @@ const StyledComponent = styled(Component)`
   color: ${(props) => props.theme.colors.white};
   background: ${(props) => props.theme.colors.purple[600]};
   text-decoration: none;
-  /* padding: 8px 16px; */
   border-radius: 4px;
   border-bottom: solid 4px ${(props) => props.theme.colors.blackAlpha[50]};
   :hover {
