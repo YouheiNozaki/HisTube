@@ -18,7 +18,7 @@ const Component: React.FC<Props> = ({ className, children }): JSX.Element => {
 };
 
 const StyledLayout = styled(Component)`
-  margin: 8px;
+  margin: 4px;
 `;
 
 export const Layout: React.FC<Props> = (props) => {
