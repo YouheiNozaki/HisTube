@@ -15,7 +15,7 @@ const Component: React.FC<Props> = ({ className }) => {
       <div className={className}>
         <section className="main">
           <h1 className="main-title">
-            動画で楽しく学ぶ。
+            動画で歴史を楽しく
             <span className="main-title-span">スキマ時間に。</span>
             <span className="main-title-span">効率よく。</span>
           </h1>
