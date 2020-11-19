@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { Layout } from 'component/layout';
-import { Button } from 'component/atoms/button';
+import { Layout } from 'components/layout';
+import { Button } from 'components/atoms/Button/button';
 
 type Props = {
   className?: string;

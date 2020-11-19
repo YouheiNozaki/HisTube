@@ -5,7 +5,10 @@ type Props = {
   text: string;
 };
 
-const Component: React.FC<Props> = ({ className, text }): JSX.Element => {
+const Component: React.FC<Props> = ({
+  className,
+  text,
+}): JSX.Element => {
   return (
     <button className={className} type="button">
       {text}
@@ -14,11 +17,13 @@ const Component: React.FC<Props> = ({ className, text }): JSX.Element => {
 };
 
 const StyledComponent = styled(Component)`
+  padding: 8px 20px;
   color: ${(props) => props.theme.colors.white};
   background: ${(props) => props.theme.colors.purple[600]};
   text-decoration: none;
   border-radius: 4px;
-  border-bottom: solid 4px ${(props) => props.theme.colors.blackAlpha[50]};
+  border-bottom: solid 4px
+    ${(props) => props.theme.colors.blackAlpha[50]};
   :hover {
     cursor: pointer;
   }

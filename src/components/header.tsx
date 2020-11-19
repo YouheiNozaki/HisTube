@@ -7,13 +7,20 @@ type Props = {
   className?: string;
 };
 
-const Component: React.FC<Props> = ({ className }): JSX.Element => {
+const Component: React.FC<Props> = ({
+  className,
+}): JSX.Element => {
   return (
     <header className={className}>
       <div className="header-logo">
         <Link href="/">
           <a href="/">
-            <Image src="/logo.png" alt="サイトのロゴ" width={40} height={40} />
+            <Image
+              src="/logo.png"
+              alt="サイトのロゴ"
+              width={40}
+              height={40}
+            />
           </a>
         </Link>
         <p className="header-title">History Tube</p>
@@ -24,7 +31,8 @@ const Component: React.FC<Props> = ({ className }): JSX.Element => {
 
 const StyledHeader = styled(Component)`
   margin: 8px;
-  border-bottom: solid 1px ${(props) => props.theme.colors.gray[200]};
+  border-bottom: solid 1px
+    ${(props) => props.theme.colors.gray[200]};
   box-shadow: ${(props) => props.theme.shadows.none};
   & .header-logo {
     display: flex;
@@ -34,7 +42,8 @@ const StyledHeader = styled(Component)`
   & .header-title {
     color: ${(props) => props.theme.colors.purple[700]};
     font-size: 28px;
-    font-weight: ${(props) => props.theme.fontWeights.extrabold};
+    font-weight: ${(props) =>
+      props.theme.fontWeights.extrabold};
     margin: 8px;
   }
 `;
