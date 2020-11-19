@@ -9,7 +9,8 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:conflict": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "postinstall": "typesync"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "dayjs": "^1.9.5",
@@ -23,7 +24,9 @@
     "unified": "^9.2.0"
   },
   "devDependencies": {
-    "@types/autoprefixer": "^9.7.2",
+    "@storybook/addon-essentials": "^6.1.0",
+    "@storybook/addon-links": "^6.1.0",
+    "@storybook/react": "^6.1.0",
     "@types/eslint": "6.8.0",
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/node": "14.14.6",
@@ -34,6 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
     "autoprefixer": "^10.0.1",
+    "babel-loader": "^8.2.1",
     "babel-plugin-styled-components": "^1.11.1",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "^18.2.0",

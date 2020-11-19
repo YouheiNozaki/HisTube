@@ -1,5 +1,5 @@
-import { Nav } from 'component/nav';
-import { Header } from 'component/header';
+import { Nav } from 'components/nav';
+import { Header } from 'components/header';
 import styled from 'styled-components';
 
 type Props = {

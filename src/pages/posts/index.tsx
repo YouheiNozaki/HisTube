@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 
 import { http, request } from 'lib/fetch';
 import { renderAst } from 'lib/renderHtml';
-import { Layout } from 'component/layout';
+import { Layout } from 'components/layout';
 
 import type { ContentType, PostType } from 'types/post';
 

@@ -14,6 +14,7 @@ const Component: React.FC<Props> = ({ className, text }): JSX.Element => {
 };
 
 const StyledComponent = styled(Component)`
+  padding: 8px 20px;
   color: ${(props) => props.theme.colors.white};
   background: ${(props) => props.theme.colors.purple[600]};
   text-decoration: none;
