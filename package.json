@@ -21,12 +21,12 @@
     "rehype-parse": "^7.0.1",
     "rehype-react": "^6.1.0",
     "styled-components": "^5.2.1",
-    "unified": "^9.2.0"
-  },
-  "devDependencies": {
+    "unified": "^9.2.0",
     "@storybook/addon-essentials": "^6.1.0",
     "@storybook/addon-links": "^6.1.0",
-    "@storybook/react": "^6.1.0",
+    "@storybook/react": "^6.1.0"
+  },
+  "devDependencies": {
     "@types/eslint": "6.8.0",
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/node": "14.14.6",
