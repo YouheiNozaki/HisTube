@@ -5,7 +5,9 @@ type Props = {
   className?: string;
 };
 
-const Component: React.FC<Props> = ({ className }): JSX.Element => {
+const Component: React.FC<Props> = ({
+  className,
+}): JSX.Element => {
   return (
     <div className={className}>
       <Link href="/posts">
@@ -26,7 +28,8 @@ const StyledComponent = styled(Component)`
   justify-content: space-around;
   & a {
     color: ${(props) => props.theme.colors.purple[700]};
-    font-weight: ${(props) => props.theme.fontWeights.medium};
+    font-weight: ${(props) =>
+      props.theme.fontWeights.medium};
     margin: 4px;
     text-decoration: none;
   }

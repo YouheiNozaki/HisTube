@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import styled from 'styled-components';
 
-type Props = {
+export type Props = {
   className?: string;
 };
 

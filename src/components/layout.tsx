@@ -1,5 +1,5 @@
 import { Nav } from 'components/nav';
-import { Header } from 'components/header';
+import { Header } from 'components/Header/header';
 import styled from 'styled-components';
 
 type Props = {
@@ -7,7 +7,10 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Component: React.FC<Props> = ({ className, children }): JSX.Element => {
+const Component: React.FC<Props> = ({
+  className,
+  children,
+}): JSX.Element => {
   return (
     <div className={className}>
       <Header />
