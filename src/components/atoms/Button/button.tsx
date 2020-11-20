@@ -23,7 +23,7 @@ const StyledComponent = styled(Component)`
   text-decoration: none;
   border-radius: 4px;
   border-bottom: solid 4px
-    ${(props) => props.theme.colors.blackAlpha[50]};
+    ${(props) => props.theme.colors.purple[900]};
   :hover {
     cursor: pointer;
   }
