@@ -12,12 +12,16 @@ type Props = {
 const Component: React.FC<Props> = ({ className }) => {
   return (
     <Layout>
-      <div className={className}>
+      <article className={className}>
         <section className="main">
           <h1 className="main-title">
             動画で歴史を楽しく
-            <span className="main-title-span">スキマ時間に。</span>
-            <span className="main-title-span">効率よく。</span>
+            <span className="main-title-span">
+              スキマ時間に。
+            </span>
+            <span className="main-title-span">
+              効率よく。
+            </span>
           </h1>
           <Image
             src="/main.svg"
@@ -28,14 +32,41 @@ const Component: React.FC<Props> = ({ className }) => {
           />
         </section>
         <section className="main-link">
-          <p className="main-link-text">さあ、はじめよう！！</p>
+          <h2 className="main-link-heading">
+            さあ、はじめよう！！
+          </h2>
           <Link href="/posts">
             <a href="/posts">
-              <Button text="動画一覧を見る" className="main-link-button" />
+              <Button
+                text="動画一覧を見る"
+                className="main-link-button"
+              />
             </a>
           </Link>
         </section>
-      </div>
+        <section className="main-intro">
+          <h3 className="main-intro-heading">
+            このサイトを作った人
+          </h3>
+          <div className="main-intro-image">
+            <Image
+              src="/cat.png"
+              alt="自己紹介画像"
+              width={120}
+              height={120}
+              className="main-intro-image-child"
+            />
+          </div>
+          <div className="main-intro-paragraph">
+            <p>野崎洋平</p>
+            <p>埼玉県立川口高校地歴科教員</p>
+            <p>文学部史学科卒。</p>
+            <p>
+              愛猫と愛犬が大好き。最近はプログラミングを勉強している。
+            </p>
+          </div>
+        </section>
+      </article>
     </Layout>
   );
 };
@@ -51,19 +82,44 @@ const StyledComponent = styled(Component)`
     display: block;
     margin-top: 8px;
     font-size: ${(props) => props.theme.fontSizes['2xl']};
-    font-weight: ${(props) => props.theme.fontWeights.semibold};
+    font-weight: ${(props) =>
+      props.theme.fontWeights.semibold};
     color: ${(props) => props.theme.colors.purple[600]};
   }
   & .main-link {
     margin: 40px 0px;
     text-align: center;
   }
-  & .main-link-text {
+  & .main-link-heading {
     color: ${(props) => props.theme.colors.purple[900]};
-    font-weight: ${(props) => props.theme.fontWeights.semibold};
+    font-weight: ${(props) =>
+      props.theme.fontWeights.semibold};
   }
   & .main-link-button {
     padding: 12px 20px;
+  }
+  & .main-intro {
+    margin: 40px auto 0;
+    text-align: center;
+  }
+  & .main-intro-heading {
+    color: ${(props) => props.theme.colors.purple[900]};
+    font-weight: ${(props) =>
+      props.theme.fontWeights.semibold};
+  }
+  & .main-intro-image {
+    margin: 40px auto;
+    width: 120px;
+    height: 120px;
+  }
+  & .main-intro-image-child {
+    border: solid 4px
+      ${(props) => props.theme.colors.purple[900]};
+    border-radius: 50%;
+    box-shadow: ${(props) => props.theme.shadows.xl};
+  }
+  & .main-intro-paragraph {
+    color: ${(props) => props.theme.colors.blackAlpha[900]};
   }
 `;
 

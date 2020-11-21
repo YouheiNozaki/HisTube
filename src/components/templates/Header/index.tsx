@@ -7,9 +7,7 @@ export type Props = {
   className?: string;
 };
 
-const Component: React.FC<Props> = ({
-  className,
-}): JSX.Element => {
+const Component: React.FC<Props> = ({ className }) => {
   return (
     <header className={className}>
       <div className="header-logo">
@@ -29,7 +27,7 @@ const Component: React.FC<Props> = ({
   );
 };
 
-const StyledHeader = styled(Component)`
+const StyledComponent: React.FC = styled(Component)`
   margin: 8px;
   border-bottom: solid 1px
     ${(props) => props.theme.colors.gray[200]};
@@ -48,8 +46,4 @@ const StyledHeader = styled(Component)`
   }
 `;
 
-export const Header: React.FC = (props) => {
-  const { children } = props;
-
-  return <StyledHeader>{children}</StyledHeader>;
-};
+export const Header = StyledComponent;
