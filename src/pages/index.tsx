@@ -32,7 +32,7 @@ const Component: React.FC<Props> = ({ className }) => {
           />
         </section>
         <section className="main-link">
-          <h2 className="main-link-text">
+          <h2 className="main-link-heading">
             さあ、はじめよう！！
           </h2>
           <Link href="/posts">
@@ -44,20 +44,27 @@ const Component: React.FC<Props> = ({ className }) => {
             </a>
           </Link>
         </section>
-        <section>
-          <h2>このサイトを作った人</h2>
-          <Image
-            src="/cat.png"
-            alt="自己紹介画像"
-            width={200}
-            height={200}
-          />
-          <p>野崎洋平</p>
-          <p>埼玉県立○○高校地歴科教員</p>
-          <p>文学部史学科卒。</p>
-          <p>
-            愛猫と愛犬が大好き。最近はプログラミングを勉強している。
-          </p>
+        <section className="main-intro">
+          <h3 className="main-intro-heading">
+            このサイトを作った人
+          </h3>
+          <div className="main-intro-image">
+            <Image
+              src="/cat.png"
+              alt="自己紹介画像"
+              width={120}
+              height={120}
+              className="main-intro-image-child"
+            />
+          </div>
+          <div className="main-intro-paragraph">
+            <p>野崎洋平</p>
+            <p>埼玉県立○○高校地歴科教員</p>
+            <p>文学部史学科卒。</p>
+            <p>
+              愛猫と愛犬が大好き。最近はプログラミングを勉強している。
+            </p>
+          </div>
         </section>
       </article>
     </Layout>
@@ -83,13 +90,36 @@ const StyledComponent = styled(Component)`
     margin: 40px 0px;
     text-align: center;
   }
-  & .main-link-text {
+  & .main-link-heading {
     color: ${(props) => props.theme.colors.purple[900]};
     font-weight: ${(props) =>
       props.theme.fontWeights.semibold};
   }
   & .main-link-button {
     padding: 12px 20px;
+  }
+  & .main-intro {
+    margin: 40px auto 0;
+    text-align: center;
+  }
+  & .main-intro-heading {
+    color: ${(props) => props.theme.colors.purple[900]};
+    font-weight: ${(props) =>
+      props.theme.fontWeights.semibold};
+  }
+  & .main-intro-image {
+    margin: 40px auto;
+    width: 120px;
+    height: 120px;
+  }
+  & .main-intro-image-child {
+    border: solid 4px
+      ${(props) => props.theme.colors.purple[900]};
+    border-radius: 50%;
+    box-shadow: ${(props) => props.theme.shadows.xl};
+  }
+  & .main-intro-paragraph {
+    color: ${(props) => props.theme.colors.blackAlpha[900]};
   }
 `;
 
