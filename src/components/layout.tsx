@@ -1,6 +1,6 @@
 import { Nav } from 'components/nav';
 import { Header } from 'components/templates/Header';
-// import { Footer } from 'components/footer';
+import { Footer } from 'components/templates/Footer';
 import styled from 'styled-components';
 
 type Props = {
@@ -17,7 +17,7 @@ const Component: React.FC<Props> = ({
       <Header />
       <Nav />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
