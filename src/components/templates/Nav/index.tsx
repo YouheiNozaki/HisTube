@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import styled from 'styled-components';
+
+import { EffectLink } from 'components/atoms/EffectLink';
 
 type Props = {
   className?: string;
@@ -10,7 +11,10 @@ const Component: React.FC<Props> = ({
 }): JSX.Element => {
   return (
     <div className={className}>
-      <Link href="/posts">
+      <EffectLink text="一覧" url="/posts" />
+      <EffectLink text="世界史" url="/posts" />
+      <EffectLink text="日本史" url="/posts" />
+      {/* <Link href="/posts">
         <a href="/posts">一覧</a>
       </Link>
       <Link href="/posts">
@@ -18,7 +22,7 @@ const Component: React.FC<Props> = ({
       </Link>
       <Link href="/posts">
         <a href="/posts">日本史</a>
-      </Link>
+      </Link> */}
     </div>
   );
 };
@@ -27,11 +31,7 @@ const StyledComponent = styled(Component)`
   display: flex;
   justify-content: space-around;
   & a {
-    color: ${(props) => props.theme.colors.purple[700]};
-    font-weight: ${(props) =>
-      props.theme.fontWeights.medium};
-    margin: 4px;
-    text-decoration: none;
+    width: 100%;
   }
 `;
 
