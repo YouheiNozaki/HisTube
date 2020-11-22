@@ -23,6 +23,7 @@ const StyledComponent = styled(Component)`
   justify-content: space-around;
   & a {
     width: 100%;
+    padding-left: 40px;
   }
 `;
 

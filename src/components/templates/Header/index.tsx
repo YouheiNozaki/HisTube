@@ -30,7 +30,7 @@ const Component: React.FC<Props> = ({ className }) => {
 const StyledComponent: React.FC = styled(Component)`
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: ${(props) => props.theme.zIndices.header};
   width: 100%;
   background: ${(props) => props.theme.colors.white};
   padding: 8px;
