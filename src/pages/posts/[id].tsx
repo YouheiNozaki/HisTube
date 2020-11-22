@@ -64,7 +64,9 @@ const PostDatail = ({
   return (
     <Layout>
       <h1>{post.title}</h1>
-      <p>{post.tag.name}</p>
+      {post.tag.map((tag) => {
+        return <p>{tag.name}</p>;
+      })}
       <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
       <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
       {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}

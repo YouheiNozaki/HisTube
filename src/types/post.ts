@@ -9,7 +9,7 @@ export type PostType = {
   updatedAt: string;
   title: string;
   video: string;
-  tag: PostTag;
+  tag: PostTag[];
   content?: string;
 };
 

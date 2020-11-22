@@ -59,7 +59,7 @@ const Component: React.FC<Props> = ({ className }) => {
           </div>
           <div className="main-intro-paragraph">
             <p>野崎洋平</p>
-            <p>埼玉県立川口高校地歴科教員</p>
+            <p>埼玉県立○○高校地歴科教員</p>
             <p>文学部史学科卒。</p>
             <p>
               愛猫と愛犬が大好き。最近はプログラミングを勉強している。
