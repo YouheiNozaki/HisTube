@@ -14,15 +14,6 @@ const Component: React.FC<Props> = ({
       <EffectLink text="一覧" url="/posts" />
       <EffectLink text="世界史" url="/posts" />
       <EffectLink text="日本史" url="/posts" />
-      {/* <Link href="/posts">
-        <a href="/posts">一覧</a>
-      </Link>
-      <Link href="/posts">
-        <a href="/posts">世界史</a>
-      </Link>
-      <Link href="/posts">
-        <a href="/posts">日本史</a>
-      </Link> */}
     </div>
   );
 };
