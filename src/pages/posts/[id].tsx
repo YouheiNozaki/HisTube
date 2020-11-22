@@ -28,7 +28,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<{ post: PostType }> = async (
+export const getStaticProps: GetStaticProps<{
+  post: PostType;
+}> = async (
   context: GetStaticPropsContext<{ id: string }>,
 ) => {
   const { id } = context.params;
@@ -50,7 +52,9 @@ export const getStaticProps: GetStaticProps<{ post: PostType }> = async (
 
 const PostDatail = ({
   post,
-}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactNode => {
+}: InferGetStaticPropsType<
+  typeof getStaticProps
+>): React.ReactNode => {
   const router = useRouter();
 
   if (router.isFallback) {

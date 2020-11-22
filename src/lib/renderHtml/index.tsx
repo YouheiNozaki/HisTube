@@ -5,7 +5,9 @@ import rehypeReact from 'rehype-react';
 
 import { H1 } from './parts';
 
-export function renderAst(content: string): React.ReactNode {
+export function renderAst(
+  content: string,
+): React.ReactNode {
   const htmlAst = unified()
     .use(parse, { fragment: true })
     .use(parse)

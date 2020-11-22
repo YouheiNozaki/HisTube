@@ -1,5 +1,8 @@
 import { Fragment } from 'react';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import {
+  GetStaticProps,
+  InferGetStaticPropsType,
+} from 'next';
 import Link from 'next/link';
 import dayjs from 'dayjs';
 
@@ -23,7 +26,9 @@ export const getStaticProps: GetStaticProps<{
 
 const Post = ({
   posts,
-}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactNode => {
+}: InferGetStaticPropsType<
+  typeof getStaticProps
+>): React.ReactNode => {
   return (
     <Layout>
       <h1>動画一覧ページ</h1>
@@ -33,8 +38,16 @@ const Post = ({
             <Link href={`posts/${post.id}`}>
               <a href={`posts/${post.id}`}>
                 <h2>{post.title}</h2>
-                <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
-                <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
+                <p>
+                  {dayjs(post.createdAt).format(
+                    `YYYY/MM/DD`,
+                  )}
+                </p>
+                <p>
+                  {dayjs(post.updatedAt).format(
+                    'YYYY/MM/DD',
+                  )}
+                </p>
                 {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
                 <div>{renderAst(post.video)}</div>
               </a>

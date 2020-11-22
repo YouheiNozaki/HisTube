@@ -9,8 +9,8 @@ const Component: React.FC<Props> = ({
 }): JSX.Element => {
   return (
     <footer className={className}>
-      <div className="footer-terms-list">
-        <ul>
+      <div>
+        <ul className="footer-terms-list">
           <li>利用規約</li>
           <li>プライバシーポリシー</li>
           <li>お問い合わせ</li>
@@ -18,16 +18,35 @@ const Component: React.FC<Props> = ({
       </div>
       <p className="footer-copywrite">
         {' '}
-        <small>
-          &copy;2020 History Tube createdBy YoheiNozaki
-        </small>
+        <small>&copy;2020 History Tube</small>
       </p>
     </footer>
   );
 };
 
 const StyledFooter = styled(Component)`
-  &
+  margin: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  & .footer-terms-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  & .footer-terms-list > li {
+    list-style: none;
+    color: ${(props) => props.theme.colors.gray[600]};
+    font-size: ${(props) => props.theme.fontSizes.xs};
+  }
+  & .footer-terms-list > li:hover {
+    color: ${(props) => props.theme.colors.gray[900]};
+    cursor: pointer;
+  }
+  & .footer-copywrite {
+    margin: 0 auto 20px;
+    color: ${(props) => props.theme.colors.gray[500]};
+    font-size: ${(props) => props.theme.fontSizes.xs};
+  }
 `;
 
 export const Footer: React.FC = (props) => {
