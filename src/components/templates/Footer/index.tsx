@@ -18,17 +18,13 @@ const Component: React.FC<Props> = ({
       </div>
       <p className="footer-copywrite">
         {' '}
-        <small>
-          &copy;2020 History Tube createdBy YoheiNozaki
-        </small>
+        <small>&copy;2020 History Tube</small>
       </p>
     </footer>
   );
 };
 
-const StyledFooter = styled(Component)`
-  &
-`;
+const StyledFooter = styled(Component)``;
 
 export const Footer: React.FC = (props) => {
   const { children } = props;

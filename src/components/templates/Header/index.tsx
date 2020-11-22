@@ -28,9 +28,14 @@ const Component: React.FC<Props> = ({ className }) => {
 };
 
 const StyledComponent: React.FC = styled(Component)`
-  margin: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: ${(props) => props.theme.colors.white};
+  padding: 8px;
   border-bottom: solid 1px
-    ${(props) => props.theme.colors.gray[200]};
+    ${(props) => props.theme.colors.gray[400]};
   box-shadow: ${(props) => props.theme.shadows.none};
   & .header-logo {
     display: flex;

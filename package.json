@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"src/**/*.{js,ts,tsx}*\"",
-    "type-check": "tsc --noEmit --incremental",
+    "type-check": "tsc",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:conflict": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
@@ -64,8 +64,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "yarn run format",
-      "yarn run lint",
-      "yarn lint type-check"
+      "yarn run lint"
     ]
   }
 }

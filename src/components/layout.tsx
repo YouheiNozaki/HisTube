@@ -1,4 +1,4 @@
-import { Nav } from 'components/nav';
+import { Nav } from 'components/templates/Nav';
 import { Header } from 'components/templates/Header';
 import { Footer } from 'components/templates/Footer';
 import styled from 'styled-components';
@@ -22,9 +22,7 @@ const Component: React.FC<Props> = ({
   );
 };
 
-const StyledLayout = styled(Component)`
-  margin: 4px;
-`;
+const StyledLayout = styled(Component)``;
 
 export const Layout: React.FC<Props> = (props) => {
   const { children } = props;
