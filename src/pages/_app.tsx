@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'theme';
 import { GlobalStyle } from 'theme/global';
+import { Normalize } from 'styled-normalize';
 
 function MyApp({
   Component,
@@ -9,6 +10,7 @@ function MyApp({
 }: AppProps): React.ReactNode {
   return (
     <>
+      <Normalize />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}

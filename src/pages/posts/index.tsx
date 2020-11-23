@@ -37,7 +37,7 @@ const Post = ({
             tag={post.tag}
             createdAt={post.createdAt}
             updatedAt={post.updatedAt}
-            video={post.video}
+            url={post.image.url}
           />
         );
       })}

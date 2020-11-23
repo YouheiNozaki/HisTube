@@ -1,37 +1,96 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
 import dayjs from 'dayjs';
+import styled from 'styled-components';
 
-import { renderAst } from 'lib/renderHtml';
 import type { PostType } from 'types/post';
 
-export const Card: React.FC<PostType> = ({
+interface Props extends PostType {
+  className?: string;
+  url?: string;
+}
+
+const Component: React.FC<Props> = ({
   id,
   title,
   createdAt,
   updatedAt,
   tag,
-  video,
+  url,
+  className,
 }) => {
   return (
-    <Fragment key={id}>
-      <section>
+    <section className={className}>
+      <Fragment key={id}>
         <Link href={id}>
-          <a href={id}>
-            <h2>{title}</h2>
-            {tag.map((t) => {
-              return (
-                <Fragment key={t.id}>
-                  <p>{t.name}</p>
-                </Fragment>
-              );
-            })}
-            <p>{dayjs(createdAt).format('YYYY/MM/DD')}</p>
-            <p>{dayjs(updatedAt).format('YYYY/MM/DD')}</p>
-            <div>{renderAst(video)}</div>
+          <a href={id} className="card">
+            <img
+              src={url}
+              alt={title}
+              className="card-image"
+            />
+            <h2 className="card-heading">{title}</h2>
+            <div className="card-tags">
+              {tag.map((t) => {
+                return (
+                  <Fragment key={t.id}>
+                    <p>{t.name}</p>
+                  </Fragment>
+                );
+              })}
+            </div>
+            <div className="card-day">
+              <p>
+                作成日:
+                {dayjs(createdAt).format('YYYY/MM/DD')}
+              </p>
+              <p>
+                更新日:
+                {dayjs(updatedAt).format('YYYY/MM/DD')}
+              </p>
+            </div>
           </a>
         </Link>
-      </section>
-    </Fragment>
+      </Fragment>
+    </section>
   );
 };
+
+const StyledComponent = styled(Component)`
+  margin: 12px;
+  padding: 12px;
+  & .card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+  & .card-heading {
+    color: ${(props) => props.theme.colors.purple[900]};
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  & .card-tags {
+    display: flex;
+  }
+  & .card-tags > p {
+    color: ${(props) => props.theme.colors.purple[600]};
+    font-weight: ${(props) =>
+      props.theme.fontWeights.hairline};
+    margin-left: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: solid 1px
+      ${(props) => props.theme.colors.purple[600]};
+  }
+  & .card-day {
+    display: flex;
+  }
+  & .card-day > p {
+    margin-left: 8px;
+    color: ${(props) => props.theme.colors.purple[400]};
+  }
+  & .card-image {
+  }
+`;
+
+export const Card = StyledComponent;
