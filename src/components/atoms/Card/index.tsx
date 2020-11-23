@@ -64,6 +64,8 @@ const StyledComponent = styled(Component)`
     display: flex;
     flex-direction: column;
   }
+  & .card-image {
+  }
   & .card-heading {
     color: ${(props) => props.theme.colors.purple[900]};
     text-overflow: ellipsis;
@@ -86,10 +88,8 @@ const StyledComponent = styled(Component)`
     display: flex;
   }
   & .card-day > p {
-    margin-left: 8px;
+    margin-right: 8px;
     color: ${(props) => props.theme.colors.purple[400]};
-  }
-  & .card-image {
   }
 `;
 
