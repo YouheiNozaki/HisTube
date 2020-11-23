@@ -56,9 +56,6 @@ const StyledComponent = styled(Component)`
   margin: 8px;
   & .posts-heading {
     margin-left: 16px;
-    > h1 {
-      font-size: 32px;
-    }
   }
 `;
 

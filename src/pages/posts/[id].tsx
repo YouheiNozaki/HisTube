@@ -8,7 +8,6 @@ import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
 
 import { http, request } from 'lib/fetch';
-import { renderAst } from 'lib/renderHtml';
 import { Layout } from 'components/layout';
 
 import type { ContentType, PostType } from 'types/post';
@@ -64,13 +63,12 @@ const PostDatail = ({
   return (
     <Layout>
       <h1>{post.title}</h1>
+      <img src={post.image.url} alt="タイトル画像" />
       {post.tag.map((tag) => {
         return <p>{tag.name}</p>;
       })}
       <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
       <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
-      <div>{renderAst(post.content)}</div>
     </Layout>
   );
 };
