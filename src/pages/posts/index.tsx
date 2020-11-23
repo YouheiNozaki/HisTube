@@ -1,13 +1,17 @@
-import {
-  GetStaticProps,
-  InferGetStaticPropsType,
-} from 'next';
+import { GetStaticProps } from 'next';
+import styled from 'styled-components';
 
 import { http, request } from 'lib/fetch';
 import { Layout } from 'components/layout';
 import { Card } from 'components/atoms/Card';
+import { Heading } from 'components/atoms/Heading';
 
 import type { ContentType, PostType } from 'types/post';
+
+type Props = {
+  posts: PostType[];
+  className?: string;
+};
 
 export const getStaticProps: GetStaticProps<{
   posts: PostType[];
@@ -21,27 +25,50 @@ export const getStaticProps: GetStaticProps<{
   };
 };
 
-const Post = ({
+const Component: React.FC<Props> = ({
   posts,
-}: InferGetStaticPropsType<
-  typeof getStaticProps
->): React.ReactNode => {
+  className,
+}) => {
   return (
     <Layout>
-      <h1>動画一覧ページ</h1>
-      {posts.map((post) => {
-        return (
-          <Card
-            id={`posts/${post.id}`}
-            title={post.title}
-            tag={post.tag}
-            createdAt={post.createdAt}
-            updatedAt={post.updatedAt}
-            url={post.image.url}
-          />
-        );
-      })}
+      <div className={className}>
+        <div className="posts-heading">
+          <Heading text="動画一覧" />
+        </div>
+        {posts.map((post) => {
+          return (
+            <Card
+              id={`posts/${post.id}`}
+              title={post.title}
+              tag={post.tag}
+              createdAt={post.createdAt}
+              updatedAt={post.updatedAt}
+              url={post.image.url}
+            />
+          );
+        })}
+      </div>
     </Layout>
+  );
+};
+
+const StyledComponent = styled(Component)`
+  margin: 8px;
+  & .posts-heading {
+    margin-left: 16px;
+    > h1 {
+      font-size: 32px;
+    }
+  }
+`;
+
+const Post: React.FC<Props> = (props) => {
+  const { children, posts } = props;
+
+  return (
+    <StyledComponent posts={posts}>
+      {children}
+    </StyledComponent>
   );
 };
 

@@ -70,8 +70,6 @@ const PostDatail = ({
       <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
       <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
       {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
-      <div>{renderAst(post.video)}</div>
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}
       <div>{renderAst(post.content)}</div>
     </Layout>
   );
