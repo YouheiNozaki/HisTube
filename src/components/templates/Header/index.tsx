@@ -21,7 +21,7 @@ const Component: React.FC<Props> = ({ className }) => {
             />
           </a>
         </Link>
-        <p className="header-title">History Tube</p>
+        <p className="header-title">HisTube</p>
       </div>
     </header>
   );

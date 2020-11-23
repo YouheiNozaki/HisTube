@@ -6,6 +6,6 @@ export default {
   component: EffectLink,
 } as Meta;
 
-export const Primary: React.FC = () => (
+export const Default: React.FC = () => (
   <EffectLink text="その他" url="./post" />
 );

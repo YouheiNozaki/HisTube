@@ -8,7 +8,9 @@ export type PostType = {
   createdAt: string;
   updatedAt: string;
   title: string;
-  video: string;
+  image?: {
+    url: string;
+  };
   tag: PostTag[];
   content?: string;
 };
