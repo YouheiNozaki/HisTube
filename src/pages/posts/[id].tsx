@@ -10,10 +10,10 @@ import dayjs from 'dayjs';
 import { http, request } from 'lib/fetch';
 import { Layout } from 'components/layout';
 
-import type { ContentType, PostType } from 'types/post';
+import type { PostsType, PostType } from 'types/post';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await http<ContentType>(request);
+  const posts = await http<PostsType>(request);
 
   return {
     paths: posts.contents.map((post) => {

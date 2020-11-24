@@ -3,6 +3,18 @@ export type PostTag = {
   name: string;
 };
 
+export type ContentType = {
+  fieldId: string;
+  heading1?: string;
+  heading2?: string;
+  heading3?: string;
+  video?: string;
+  sentence?: string;
+  image?: {
+    url?: string;
+  };
+};
+
 export type PostType = {
   id: string;
   createdAt: string;
@@ -12,9 +24,9 @@ export type PostType = {
     url: string;
   };
   tag: PostTag[];
-  content?: string;
+  content: ContentType[];
 };
 
-export type ContentType = {
+export type PostsType = {
   contents: PostType[];
 };

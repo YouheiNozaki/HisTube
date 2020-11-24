@@ -6,7 +6,7 @@ import { Layout } from 'components/layout';
 import { Card } from 'components/atoms/Card';
 import { Heading } from 'components/atoms/Heading';
 
-import type { ContentType, PostType } from 'types/post';
+import type { PostsType, PostType } from 'types/post';
 
 type Props = {
   posts: PostType[];
@@ -16,7 +16,7 @@ type Props = {
 export const getStaticProps: GetStaticProps<{
   posts: PostType[];
 }> = async () => {
-  const posts = await http<ContentType>(request);
+  const posts = await http<PostsType>(request);
 
   return {
     props: {
