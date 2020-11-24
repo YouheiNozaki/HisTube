@@ -25,7 +25,7 @@ const StyledComponent = styled(Component)`
   & a {
     white-space: nowrap;
     width: 100%;
-    padding-left: 40px;
+    padding-left: 8px;
   }
 `;
 
