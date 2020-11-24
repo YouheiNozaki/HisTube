@@ -10,20 +10,22 @@ const Component: React.FC<Props> = ({
   className,
 }): JSX.Element => {
   return (
-    <div className={className}>
-      <EffectLink text="一覧" url="/posts" />
-      <EffectLink text="世界史" url="/posts" />
-      <EffectLink text="日本史" url="/posts" />
-    </div>
+    <nav className={className}>
+      <EffectLink text="一覧" url="/" />
+      <EffectLink text="世界史" url="/" />
+      <EffectLink text="サイトについて" url="/about" />
+    </nav>
   );
 };
 
 const StyledComponent = styled(Component)`
   display: flex;
   justify-content: space-around;
+  overflow-x: auto;
   & a {
+    white-space: nowrap;
     width: 100%;
-    padding-left: 40px;
+    padding-left: 8px;
   }
 `;
 

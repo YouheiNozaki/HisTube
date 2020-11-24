@@ -9,15 +9,15 @@ const Component: React.FC<Props> = ({
   className,
   text,
 }): JSX.Element => {
-  return <h1 className={className}>{text}</h1>;
+  return <h2 className={className}>{text}</h2>;
 };
 
 const StyledComponent = styled(Component)`
-  font-size: 28px;
+  font-size: 24px;
   color: ${(props) => props.theme.colors.purple[800]};
   padding: 4px;
   border-bottom: solid 1px
     ${(props) => props.theme.colors.gray[200]};
 `;
 
-export const Heading = StyledComponent;
+export const SecondHeading = StyledComponent;

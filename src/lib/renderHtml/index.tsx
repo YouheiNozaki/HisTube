@@ -3,7 +3,9 @@ import unified from 'unified';
 import parse from 'rehype-parse';
 import rehypeReact from 'rehype-react';
 
-import { H1 } from './parts';
+import { Paragraph } from './paragraph';
+import { Strong } from './strong';
+// import { Iframe } from './iframe';
 
 export function renderAst(
   content: string,
@@ -15,7 +17,9 @@ export function renderAst(
       createElement: React.createElement,
       Fragment: React.Fragment,
       components: {
-        h1: H1,
+        p: Paragraph,
+        strong: Strong,
+        // iframe: Iframe,
       },
     })
     .processSync(content).result;
