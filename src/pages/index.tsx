@@ -1,132 +1,72 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 
+import { http, request } from 'lib/fetch';
 import { Layout } from 'components/layout';
-import { Button } from 'components/atoms/Button/button';
+import { Card } from 'components/atoms/Card';
+import { Heading } from 'components/atoms/Heading';
+
+import type { ContentType, PostType } from 'types/post';
 
 type Props = {
+  posts: PostType[];
   className?: string;
 };
 
-const Component: React.FC<Props> = ({ className }) => {
+export const getStaticProps: GetStaticProps<{
+  posts: PostType[];
+}> = async () => {
+  const posts = await http<ContentType>(request);
+
+  return {
+    props: {
+      posts: posts.contents,
+    },
+  };
+};
+
+const Component: React.FC<Props> = ({
+  posts,
+  className,
+}) => {
   return (
     <Layout>
-      <article className={className}>
-        <section className="main">
-          <h1 className="main-title">
-            動画で歴史を楽しく
-            <span className="main-title-span">
-              スキマ時間に。
-            </span>
-            <span className="main-title-span">
-              効率よく。
-            </span>
-          </h1>
-          <Image
-            src="/main.svg"
-            alt="サイトのメイン画像"
-            width={500}
-            height={400}
-            className="main-image"
-          />
-        </section>
-        <section className="main-link">
-          <h2 className="main-link-heading">
-            さあ、はじめよう！！
-          </h2>
-          <Link href="/posts">
-            <a href="/posts">
-              <Button
-                text="動画一覧を見る"
-                className="main-link-button"
-              />
-            </a>
-          </Link>
-        </section>
-        <section className="main-intro">
-          <h3 className="main-intro-heading">
-            このサイトを作った人
-          </h3>
-          <div className="main-intro-image">
-            <Image
-              src="/cat.png"
-              alt="自己紹介画像"
-              width={120}
-              height={120}
-              className="main-intro-image-child"
+      <div className={className}>
+        <div className="posts-heading">
+          <Heading text="動画一覧" />
+        </div>
+        {posts.map((post) => {
+          return (
+            <Card
+              id={`posts/${post.id}`}
+              title={post.title}
+              tag={post.tag}
+              createdAt={post.createdAt}
+              updatedAt={post.updatedAt}
+              url={post.image.url}
             />
-          </div>
-          <div className="main-intro-paragraph">
-            <p>野崎洋平</p>
-            <p>埼玉県立○○高校地歴科教員</p>
-            <p>文学部史学科卒。</p>
-            <p>
-              愛猫と愛犬が大好き。最近はプログラミングを勉強している。
-            </p>
-          </div>
-        </section>
-      </article>
+          );
+        })}
+      </div>
     </Layout>
   );
 };
 
 const StyledComponent = styled(Component)`
-  margin: 16px;
-  & .main-title {
-    margin-top: 32px;
-    font-size: ${(props) => props.theme.fontSizes['4xl']};
-    color: ${(props) => props.theme.colors.purple[900]};
-  }
-  & .main-title-span {
-    display: block;
-    margin-top: 8px;
-    font-size: ${(props) => props.theme.fontSizes['2xl']};
-    font-weight: ${(props) =>
-      props.theme.fontWeights.semibold};
-    color: ${(props) => props.theme.colors.purple[600]};
-  }
-  & .main-link {
-    margin: 40px 0px;
-    text-align: center;
-  }
-  & .main-link-heading {
-    color: ${(props) => props.theme.colors.purple[900]};
-    font-weight: ${(props) =>
-      props.theme.fontWeights.semibold};
-  }
-  & .main-link-button {
-    padding: 12px 20px;
-  }
-  & .main-intro {
-    margin: 40px auto 0;
-    text-align: center;
-  }
-  & .main-intro-heading {
-    color: ${(props) => props.theme.colors.purple[900]};
-    font-weight: ${(props) =>
-      props.theme.fontWeights.semibold};
-  }
-  & .main-intro-image {
-    margin: 40px auto;
-    width: 120px;
-    height: 120px;
-  }
-  & .main-intro-image-child {
-    border: solid 4px
-      ${(props) => props.theme.colors.purple[900]};
-    border-radius: 50%;
-    box-shadow: ${(props) => props.theme.shadows.xl};
-  }
-  & .main-intro-paragraph {
-    color: ${(props) => props.theme.colors.blackAlpha[900]};
+  margin: 8px;
+  & .posts-heading {
+    margin-left: 16px;
   }
 `;
 
-const Home: React.FC = (props) => {
-  const { children } = props;
+const Post: React.FC<Props> = (props) => {
+  const { children, posts } = props;
 
-  return <StyledComponent>{children}</StyledComponent>;
+  return (
+    <StyledComponent posts={posts}>
+      {children}
+    </StyledComponent>
+  );
 };
 
-export default Home;
+export default Post;
