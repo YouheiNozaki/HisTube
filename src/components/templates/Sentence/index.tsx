@@ -43,20 +43,18 @@ const Component: React.FC<Props> = ({
 const StyledComponent = styled(Component)`
   & .iframe-wrap {
     position: relative;
-    /* width: 100%; */
-    padding-top: 56.25%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    border: 2px solid #ccc;
   }
-  & .iframe-wrap > iframe {
+  & .iframe-wrap::before {
+    content: '';
+    display: inline-block;
+    padding-top: 56.25%;
+  }
+  iframe {
     position: absolute;
-    /* top: 0; */
-    /* left: 0; */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    border: none;
-    display: block;
   }
 `;
 
