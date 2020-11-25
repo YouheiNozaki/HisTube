@@ -5,7 +5,7 @@ import rehypeReact from 'rehype-react';
 
 import { Paragraph } from './paragraph';
 import { Strong } from './strong';
-// import { Iframe } from './iframe';
+import { Iframe } from './iframe';
 
 export function renderAst(
   content: string,
@@ -19,7 +19,7 @@ export function renderAst(
       components: {
         p: Paragraph,
         strong: Strong,
-        // iframe: Iframe,
+        iframe: Iframe,
       },
     })
     .processSync(content).result;

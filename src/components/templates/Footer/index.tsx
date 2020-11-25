@@ -12,13 +12,13 @@ const Component: React.FC<Props> = ({
     <footer className={className}>
       <div>
         <ul className="footer-terms-list">
-          <Link href="./terms">
-            <a href="./terms">
+          <Link href="/terms">
+            <a href="/terms">
               <li>利用規約</li>
             </a>
           </Link>
-          <Link href="./privacy">
-            <a href="./privacy">
+          <Link href="/privacy">
+            <a href="/privacy">
               <li>プライバシーポリシー</li>
             </a>
           </Link>
