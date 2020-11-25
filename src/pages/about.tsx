@@ -123,10 +123,10 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-const Home: React.FC = (props) => {
+const About: React.FC = (props) => {
   const { children } = props;
 
   return <StyledComponent>{children}</StyledComponent>;
 };
 
-export default Home;
+export default About;
