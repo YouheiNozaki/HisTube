@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { Layout } from 'components/layout';
+import { Layout } from 'components/templates/layout';
 import { Button } from 'components/atoms/Button';
 
 type Props = {

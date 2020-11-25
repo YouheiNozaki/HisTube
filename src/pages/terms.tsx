@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Layout } from 'components/layout';
+import { Layout } from 'components/templates/layout';
 import {
   Heading,
   SecondHeading,
