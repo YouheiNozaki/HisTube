@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
 export type Props = {
@@ -11,9 +12,16 @@ const Component: React.FC<Props> = ({
     <footer className={className}>
       <div>
         <ul className="footer-terms-list">
-          <li>利用規約</li>
-          <li>プライバシーポリシー</li>
-          <li>お問い合わせ</li>
+          <Link href="./terms">
+            <a href="./terms">
+              <li>利用規約</li>
+            </a>
+          </Link>
+          <Link href="./privacy">
+            <a href="./privacy">
+              <li>プライバシーポリシー</li>
+            </a>
+          </Link>
         </ul>
       </div>
       <p className="footer-copywrite">
@@ -33,12 +41,15 @@ const StyledFooter = styled(Component)`
     justify-content: space-between;
     padding: 16px;
   }
-  & .footer-terms-list > li {
+  & .footer-terms-list > a {
+    text-decoration: none;
+  }
+  & .footer-terms-list > a > li {
     list-style: none;
     color: ${(props) => props.theme.colors.gray[600]};
     font-size: ${(props) => props.theme.fontSizes.xs};
   }
-  & .footer-terms-list > li:hover {
+  & .footer-terms-list > a > li:hover {
     color: ${(props) => props.theme.colors.gray[900]};
     cursor: pointer;
   }

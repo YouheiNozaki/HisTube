@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 
 import { http, request } from 'lib/fetch';
-import { Layout } from 'components/layout';
+import { Layout } from 'components/templates/layout';
 import { Card } from 'components/atoms/Card';
 import { Heading } from 'components/atoms/Heading';
 

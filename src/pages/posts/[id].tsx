@@ -8,7 +8,7 @@ import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
 
 import { http, request } from 'lib/fetch';
-import { Layout } from 'components/layout';
+import { Layout } from 'components/templates/layout';
 
 import type { PostsType, PostType } from 'types/post';
 

@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { Layout } from 'components/layout';
-import { Button } from 'components/atoms/Button/button';
+import { Layout } from 'components/templates/layout';
+import { Button } from 'components/atoms/Button';
 
 type Props = {
   className?: string;
@@ -123,10 +123,10 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-const Home: React.FC = (props) => {
+const About: React.FC = (props) => {
   const { children } = props;
 
   return <StyledComponent>{children}</StyledComponent>;
 };
 
-export default Home;
+export default About;

@@ -24,7 +24,7 @@ export type PostType = {
     url: string;
   };
   tag: PostTag[];
-  content: ContentType[];
+  content?: ContentType[];
 };
 
 export type PostsType = {

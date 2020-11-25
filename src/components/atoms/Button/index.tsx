@@ -19,11 +19,11 @@ const Component: React.FC<Props> = ({
 const StyledComponent = styled(Component)`
   padding: 8px 20px;
   color: ${(props) => props.theme.colors.white};
-  background: ${(props) => props.theme.colors.purple[600]};
+  background: ${(props) => props.theme.colors.purple[400]};
   text-decoration: none;
   border-radius: 4px;
   border-bottom: solid 4px
-    ${(props) => props.theme.colors.purple[900]};
+    ${(props) => props.theme.colors.purple[500]};
   :hover {
     cursor: pointer;
   }
