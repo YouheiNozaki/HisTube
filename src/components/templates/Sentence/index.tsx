@@ -9,7 +9,7 @@ import { renderAst } from 'lib/renderHtml';
 
 type Props = {
   className?: string;
-  content: ContentType[];
+  content?: ContentType[];
 };
 
 const Component: React.FC<Props> = ({
@@ -31,14 +31,34 @@ const Component: React.FC<Props> = ({
         ) : c.fieldId === 'Sentence' ? (
           <div>{renderAst(c.sentence)}</div>
         ) : c.fieldId === 'video' ? (
-          <div>{renderAst(c.video)}</div>
+          <div className="iframe-wrap">
+            <div>{renderAst(c.video)}</div>
+          </div>
         ) : null,
       )}
     </main>
   );
 };
 
-const StyledComponent = styled(Component)``;
+const StyledComponent = styled(Component)`
+  & .iframe-wrap {
+    position: relative;
+    /* width: 100%; */
+    padding-top: 56.25%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 2px solid #ccc;
+  }
+  & .iframe-wrap > iframe {
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+`;
 
 export const Sentence: React.FC<Props> = (props) => {
   const { children, content } = props;

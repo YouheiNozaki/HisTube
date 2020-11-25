@@ -2,15 +2,19 @@ import {
   GetStaticPaths,
   GetStaticProps,
   GetStaticPropsContext,
-  InferGetStaticPropsType,
 } from 'next';
 import { useRouter } from 'next/dist/client/router';
-import dayjs from 'dayjs';
+import styled from 'styled-components';
 
 import { http, request } from 'lib/fetch';
 import { Layout } from 'components/templates/layout';
-
+import { Sentence } from 'components/templates/Sentence';
 import type { PostsType, PostType } from 'types/post';
+
+type Props = {
+  post: PostType;
+  className?: string;
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await http<PostsType>(request);
@@ -49,11 +53,10 @@ export const getStaticProps: GetStaticProps<{
   };
 };
 
-const PostDatail = ({
+const Component: React.FC<Props> = ({
   post,
-}: InferGetStaticPropsType<
-  typeof getStaticProps
->): React.ReactNode => {
+  className,
+}) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -62,14 +65,24 @@ const PostDatail = ({
 
   return (
     <Layout>
-      <h1>{post.title}</h1>
-      <img src={post.image.url} alt="タイトル画像" />
-      {post.tag.map((tag) => {
-        return <p>{tag.name}</p>;
-      })}
-      <p>{dayjs(post.createdAt).format(`YYYY/MM/DD`)}</p>
-      <p>{dayjs(post.updatedAt).format('YYYY/MM/DD')}</p>
+      <div className={className}>
+        <Sentence content={post.content} />
+      </div>
     </Layout>
+  );
+};
+
+const StyledComponent = styled(Component)`
+  margin: 16px;
+`;
+
+const PostDatail: React.FC<Props> = (props) => {
+  const { children, post } = props;
+
+  return (
+    <StyledComponent post={post}>
+      {children}
+    </StyledComponent>
   );
 };
 
