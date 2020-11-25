@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 import { Layout } from 'components/layout';
-import { Button } from 'components/atoms/Button/button';
+import { Button } from 'components/atoms/Button';
 
 type Props = {
   className?: string;

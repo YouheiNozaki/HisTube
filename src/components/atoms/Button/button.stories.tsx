@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react/types-6-0';
-import { Button } from './button';
+import { Button } from '.';
 
 export default {
   title: 'components/atoms/Button',
