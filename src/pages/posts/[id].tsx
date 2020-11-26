@@ -74,6 +74,7 @@ const Component: React.FC<Props> = ({
 
 const StyledComponent = styled(Component)`
   margin: 16px;
+  padding: 16px;
 `;
 
 const PostDatail: React.FC<Props> = (props) => {

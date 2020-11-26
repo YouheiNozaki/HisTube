@@ -15,6 +15,7 @@ const Component: React.FC<Props> = ({
 const StyledComponent = styled(Component)`
   line-height: 1.7;
   letter-spacing: 0.05em;
+  padding: 16px;
 `;
 
 export const Paragraph = StyledComponent;
