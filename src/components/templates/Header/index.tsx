@@ -16,12 +16,11 @@ const Component: React.FC<Props> = ({ className }) => {
             <Image
               src="/logo.png"
               alt="サイトのロゴ"
-              width={40}
+              width={140}
               height={40}
             />
           </a>
         </Link>
-        <p className="header-title">HisTube</p>
       </div>
     </header>
   );
@@ -41,13 +40,6 @@ const StyledComponent: React.FC = styled(Component)`
     display: flex;
     align-items: center;
     margin: 4px;
-  }
-  & .header-title {
-    color: ${(props) => props.theme.colors.purple[700]};
-    font-size: 28px;
-    font-weight: ${(props) =>
-      props.theme.fontWeights.extrabold};
-    margin: 8px;
   }
 `;
 
