@@ -182,12 +182,16 @@ const Component: React.FC<Props> = ({ className }) => {
 
 const StyledComponent = styled(Component)`
   margin: 16px;
+  padding: 16px;
+
   ul > li {
     list-style: none;
     line-height: 1.7;
     letter-spacing: 0.05em;
+    padding: 16px;
   }
   p {
+    padding: 16px;
     line-height: 1.7;
     letter-spacing: 0.05em;
   }
