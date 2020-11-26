@@ -10,6 +10,7 @@ import { http, request } from 'lib/fetch';
 import { Layout } from 'components/templates/layout';
 import { Sentence } from 'components/templates/Sentence';
 import type { PostsType, PostType } from 'types/post';
+import { Heading } from 'components/atoms';
 
 type Props = {
   post: PostType;
@@ -66,6 +67,7 @@ const Component: React.FC<Props> = ({
   return (
     <Layout>
       <div className={className}>
+        <Heading text={post.title} />
         <Sentence content={post.content} />
       </div>
     </Layout>
