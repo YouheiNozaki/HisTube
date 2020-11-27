@@ -75,8 +75,9 @@ const Component: React.FC<Props> = ({
 };
 
 const StyledComponent = styled(Component)`
-  margin: 16px;
+  margin: 16px auto;
   padding: 16px;
+  max-width: 1024px;
 `;
 
 const PostDatail: React.FC<Props> = (props) => {
