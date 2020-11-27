@@ -38,11 +38,12 @@ const StyledFooter = styled(Component)`
   flex-direction: column;
   & .footer-terms-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 16px;
   }
   & .footer-terms-list > a {
     text-decoration: none;
+    margin: 16px;
   }
   & .footer-terms-list > a > li {
     list-style: none;
