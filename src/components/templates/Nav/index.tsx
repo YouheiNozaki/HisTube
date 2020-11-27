@@ -27,6 +27,7 @@ const StyledComponent = styled(Component)`
     text-align: center;
     white-space: nowrap;
     width: 100%;
+    padding: 16px;
   }
 `;
 

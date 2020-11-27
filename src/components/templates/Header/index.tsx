@@ -40,6 +40,10 @@ const StyledComponent: React.FC = styled(Component)`
     display: flex;
     align-items: center;
     margin: 4px;
+    padding: 4px;
+    @media (min-width: 560px) {
+      padding: 8px;
+    }
   }
 `;
 
