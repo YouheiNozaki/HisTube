@@ -14,15 +14,17 @@ const Component: React.FC<Props> = ({ className }) => {
     <Layout>
       <article className={className}>
         <section className="main">
-          <h1 className="main-title">
-            動画で歴史を楽しく
-            <span className="main-title-span">
-              スキマ時間に。
-            </span>
-            <span className="main-title-span">
-              効率よく。
-            </span>
-          </h1>
+          <div className="main-content">
+            <h1 className="main-title">
+              動画で歴史を楽しく
+              <span className="main-title-span">
+                スキマ時間に。
+              </span>
+              <span className="main-title-span">
+                効率よく。
+              </span>
+            </h1>
+          </div>
           <Image
             src="/main.svg"
             alt="サイトのメイン画像"
@@ -72,11 +74,24 @@ const Component: React.FC<Props> = ({ className }) => {
 };
 
 const StyledComponent = styled(Component)`
-  margin: 16px;
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  & .main {
+    @media (min-width: 560px) {
+      display: flex;
+      padding: 24px;
+      margin: 0 auto;
+    }
+  }
   & .main-title {
     margin-top: 32px;
     font-size: ${(props) => props.theme.fontSizes['4xl']};
     color: ${(props) => props.theme.colors.purple[900]};
+    @media (min-width: 560px) {
+      font-size: ${(props) => props.theme.fontSizes['5xl']};
+    }
   }
   & .main-title-span {
     display: block;
@@ -85,6 +100,10 @@ const StyledComponent = styled(Component)`
     font-weight: ${(props) =>
       props.theme.fontWeights.semibold};
     color: ${(props) => props.theme.colors.purple[600]};
+    @media (min-width: 560px) {
+      font-size: ${(props) => props.theme.fontSizes['3xl']};
+      margin-top: 12px;
+    }
   }
   & .main-link {
     margin: 40px 0px;
