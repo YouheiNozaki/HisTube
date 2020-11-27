@@ -55,6 +55,10 @@ const StyledComponent = styled(Component)`
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 4px;
+    @media (min-width: 560px) {
+      padding: 24px;
+    }
   }
 `;
 

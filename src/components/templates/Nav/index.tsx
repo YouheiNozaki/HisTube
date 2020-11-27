@@ -21,11 +21,13 @@ const Component: React.FC<Props> = ({
 const StyledComponent = styled(Component)`
   display: flex;
   justify-content: space-around;
+  align-items: center;
   overflow-x: auto;
   & a {
+    text-align: center;
     white-space: nowrap;
     width: 100%;
-    padding-left: 8px;
+    padding: 16px;
   }
 `;
 

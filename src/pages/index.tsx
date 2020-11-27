@@ -53,7 +53,9 @@ const Component: React.FC<Props> = ({
 };
 
 const StyledComponent = styled(Component)`
-  margin: 8px;
+  margin: 8px auto;
+  padding: 8px;
+  max-width: 1024px;
   & .posts-heading {
     margin-left: 16px;
   }
