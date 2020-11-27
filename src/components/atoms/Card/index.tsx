@@ -58,7 +58,7 @@ const Component: React.FC<Props> = ({
 
 const StyledComponent = styled(Component)`
   margin: 12px;
-  padding: 12px;
+  padding: 24px;
   & .card {
     text-decoration: none;
     display: flex;

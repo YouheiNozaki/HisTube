@@ -50,22 +50,24 @@ const Component: React.FC<Props> = ({ className }) => {
           <h3 className="main-intro-heading">
             このサイトを作った人
           </h3>
-          <div className="main-intro-image">
-            <Image
-              src="/cat.png"
-              alt="自己紹介画像"
-              width={120}
-              height={120}
-              className="main-intro-image-child"
-            />
-          </div>
-          <div className="main-intro-paragraph">
-            <p>野崎洋平</p>
-            <p>埼玉県立○○高校地歴科教員</p>
-            <p>文学部史学科卒。</p>
-            <p>
-              愛猫と愛犬が大好き。最近はプログラミングを勉強している。
-            </p>
+          <div className="main-intro-content">
+            <div className="main-intro-image">
+              <Image
+                src="/cat.png"
+                alt="自己紹介画像"
+                width={160}
+                height={160}
+                className="main-intro-image-child"
+              />
+            </div>
+            <div className="main-intro-paragraph">
+              <p>野崎洋平</p>
+              <p>埼玉県立○○高校地歴科教員</p>
+              <p>文学部史学科卒。</p>
+              <p>
+                愛猫と愛犬が大好き。最近はプログラミングを勉強している。
+              </p>
+            </div>
           </div>
         </section>
       </article>
@@ -108,28 +110,54 @@ const StyledComponent = styled(Component)`
   & .main-link {
     margin: 40px 0px;
     text-align: center;
+    @media (min-width: 560px) {
+      display: flex;
+      margin: 40px auto;
+    }
   }
   & .main-link-heading {
     color: ${(props) => props.theme.colors.purple[900]};
     font-weight: ${(props) =>
       props.theme.fontWeights.semibold};
+    @media (min-width: 560px) {
+      line-height: 2;
+      margin: 8px;
+    }
   }
   & .main-link-button {
     padding: 12px 20px;
+    @media (min-width: 560px) {
+      margin: 8px;
+    }
   }
   & .main-intro {
     margin: 40px auto 0;
     text-align: center;
+    @media (min-width: 560px) {
+      text-align: start;
+    }
+  }
+  & .main-intro-content {
+    @media (min-width: 560px) {
+      display: flex;
+    }
   }
   & .main-intro-heading {
     color: ${(props) => props.theme.colors.purple[900]};
     font-weight: ${(props) =>
       props.theme.fontWeights.semibold};
+    @media (min-width: 560px) {
+      margin: 16px;
+    }
   }
   & .main-intro-image {
     margin: 40px auto;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
+    @media (min-width: 560px) {
+      margin: 32px;
+      order: 1;
+    }
   }
   & .main-intro-image-child {
     border: solid 4px
@@ -139,6 +167,9 @@ const StyledComponent = styled(Component)`
   }
   & .main-intro-paragraph {
     color: ${(props) => props.theme.colors.blackAlpha[900]};
+    @media (min-width: 560px) {
+      margin: 32px;
+    }
   }
 `;
 
