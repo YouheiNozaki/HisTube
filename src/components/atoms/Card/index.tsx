@@ -24,30 +24,30 @@ const Component: React.FC<Props> = ({
       <Fragment key={id}>
         <Link href={id}>
           <a href={id} className="card">
-            <img
-              src={url}
-              alt={title}
-              className="card-image"
-            />
-            <h2 className="card-heading">{title}</h2>
-            <div className="card-tags">
-              {tag.map((t) => {
-                return (
-                  <Fragment key={t.id}>
-                    <p>{t.name}</p>
-                  </Fragment>
-                );
-              })}
+            <div className="card-image">
+              <img src={url} alt={title} />
             </div>
-            <div className="card-day">
-              <p>
-                作成日:
-                {dayjs(createdAt).format('YYYY/MM/DD')}
-              </p>
-              <p>
-                更新日:
-                {dayjs(updatedAt).format('YYYY/MM/DD')}
-              </p>
+            <div className="card-content">
+              <h2 className="card-heading">{title}</h2>
+              <div className="card-tags">
+                {tag.map((t) => {
+                  return (
+                    <Fragment key={t.id}>
+                      <p>{t.name}</p>
+                    </Fragment>
+                  );
+                })}
+              </div>
+              <div className="card-day">
+                <p>
+                  作成日:
+                  {dayjs(createdAt).format('YYYY/MM/DD')}
+                </p>
+                <p>
+                  更新日:
+                  {dayjs(updatedAt).format('YYYY/MM/DD')}
+                </p>
+              </div>
             </div>
           </a>
         </Link>
@@ -63,13 +63,37 @@ const StyledComponent = styled(Component)`
     text-decoration: none;
     display: flex;
     flex-direction: column;
+    @media (min-width: 560px) {
+      display: flex;
+      flex-direction: row;
+    }
   }
   & .card-image {
+    overflow: hidden;
+    @media (min-width: 560px) {
+      max-width: 60%;
+      margin: 0 16px;
+    }
+  }
+  & .card-image > img {
+    transition: 0.5s all;
+  }
+  & .card-image > img:hover {
+    transform: scale(1.1, 1.1);
+    transition: 0.5s all;
+  }
+  & .card-content {
+    @media (min-width: 560px) {
+      max-width: 35%;
+    }
   }
   & .card-heading {
     color: ${(props) => props.theme.colors.purple[900]};
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @media (min-width: 560px) {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
   & .card-tags {
     display: flex;
