@@ -1,14 +1,31 @@
 import Head from 'next/head';
 
-import { HeadType } from 'types/head';
+// import { HeadType } from 'types/head';
+export type HeadType = {
+  pagetitle?: string;
+  pagedescription?: string;
+  pagepath?: string;
+  keyword: string;
+  image: string;
+};
 
 export const HeadTemplate: React.FC<HeadType> = ({
-  title,
-  description,
+  pagetitle,
+  pagedescription,
+  pagepath,
   keyword,
   image,
-  url,
 }) => {
+  const title = pagetitle
+    ? `${pagetitle} | ${process.env.NEXT_PUBLIC_TITLE}`
+    : `${process.env.NEXT_PUBLIC_TITLE}`;
+  const description =
+    pagedescription ||
+    `${process.env.NEXT_PUBLIC_DESCRIPTION}`;
+  const url = pagepath
+    ? `${process.env.NEXT_PUBLIC_URL}${pagepath}`
+    : `${process.env.NEXT_PUBLIC_URL}`;
+
   return (
     <Head>
       <title>{title}</title>
