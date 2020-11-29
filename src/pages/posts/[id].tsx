@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { http, request } from 'lib/fetch';
 import { Layout } from 'components/templates/layout';
 import { Sentence } from 'components/templates/Sentence';
+import { HeadTemplate } from 'components/templates/Head';
 import type { PostsType, PostType } from 'types/post';
 import { Heading } from 'components/atoms';
 
@@ -66,6 +67,7 @@ const Component: React.FC<Props> = ({
 
   return (
     <Layout>
+      <HeadTemplate />
       <div className={className}>
         <Heading text={post.title} />
         <Sentence content={post.content} />

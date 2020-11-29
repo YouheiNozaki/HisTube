@@ -5,6 +5,7 @@ import { http, request } from 'lib/fetch';
 import { Layout } from 'components/templates/layout';
 import { Card } from 'components/atoms/Card';
 import { Heading } from 'components/atoms/Heading';
+import { HeadTemplate } from 'components/templates/Head';
 
 import type { PostsType, PostType } from 'types/post';
 
@@ -31,6 +32,7 @@ const Component: React.FC<Props> = ({
 }) => {
   return (
     <Layout>
+      <HeadTemplate />
       <div className={className}>
         <div className="posts-heading">
           <Heading text="動画一覧" />
