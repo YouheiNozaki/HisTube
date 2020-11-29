@@ -33,7 +33,8 @@ export const HeadTemplate: React.FC<HeadType> = ({
     : `${process.env.NEXT_PUBLIC_URL}`;
   const imgurl = pageimg
     ? `${process.env.NEXT_PUBLIC_URL}${pageimg}`
-    : postimg || `${process.env.NEXT_PUBLIC_URL}/logo.png`;
+    : postimg ||
+      `${process.env.NEXT_PUBLIC_URL}/favicon.png`;
   const imgw = pageimgw || '1280px';
   const imgh = pageimgh || '640px';
   const fbAppId = `${process.env.FB_APP_ID}`;
