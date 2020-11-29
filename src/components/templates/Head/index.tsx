@@ -33,15 +33,21 @@ export const HeadTemplate: React.FC<HeadType> = ({
     : `${process.env.NEXT_PUBLIC_URL}`;
   const imgurl = pageimg
     ? `${process.env.NEXT_PUBLIC_URL}${pageimg}`
-    : postimg || `${process.env.NEXT_PUBLIC_URL}/logo.png`;
-  const imgw = pageimgw || '820px';
-  const imgh = pageimgh || '312px';
+    : postimg ||
+      `${process.env.NEXT_PUBLIC_URL}/favicon.png`;
+  const imgw = pageimgw || '1280px';
+  const imgh = pageimgh || '640px';
   const fbAppId = `${process.env.FB_APP_ID}`;
 
   return (
     <Head>
       <html lang="ja" />
       <title>{title}</title>
+      <meta charSet="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1"
+      />
       <meta
         property="og:description"
         content={description}
@@ -64,7 +70,7 @@ export const HeadTemplate: React.FC<HeadType> = ({
         name="twitter:card"
         content="summary_large_image"
       />
-      <meta name="twitter:site" content="@tcr_jp" />
+      {/* <meta name="twitter:site" content="" /> */}
       <meta name="twitter:url" content={imgurl} />
       <meta name="twitter:title" content={title} />
       <meta
