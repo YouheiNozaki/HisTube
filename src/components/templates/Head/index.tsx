@@ -42,6 +42,11 @@ export const HeadTemplate: React.FC<HeadType> = ({
     <Head>
       <html lang="ja" />
       <title>{title}</title>
+      <meta charSet="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1"
+      />
       <meta
         property="og:description"
         content={description}
