@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 import { Layout } from 'components/templates/layout';
+import { HeadTemplate } from 'components/templates/Head';
 import { Button } from 'components/atoms/Button';
 
 type Props = {
@@ -12,6 +13,7 @@ type Props = {
 const Component: React.FC<Props> = ({ className }) => {
   return (
     <Layout>
+      <HeadTemplate />
       <article className={className}>
         <section className="main">
           <div className="main-content">

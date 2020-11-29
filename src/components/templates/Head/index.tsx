@@ -9,7 +9,7 @@ export type HeadType = {
   postimg?: string;
   pageimgw?: string;
   pageimgh?: string;
-  keyword: string;
+  keyword?: string;
 };
 
 export const HeadTemplate: React.FC<HeadType> = ({
