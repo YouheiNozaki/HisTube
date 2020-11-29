@@ -34,8 +34,8 @@ export const HeadTemplate: React.FC<HeadType> = ({
   const imgurl = pageimg
     ? `${process.env.NEXT_PUBLIC_URL}${pageimg}`
     : postimg || `${process.env.NEXT_PUBLIC_URL}/logo.png`;
-  const imgw = pageimgw || '820px';
-  const imgh = pageimgh || '312px';
+  const imgw = pageimgw || '1280px';
+  const imgh = pageimgh || '640px';
   const fbAppId = `${process.env.FB_APP_ID}`;
 
   return (
@@ -64,7 +64,7 @@ export const HeadTemplate: React.FC<HeadType> = ({
         name="twitter:card"
         content="summary_large_image"
       />
-      <meta name="twitter:site" content="@tcr_jp" />
+      {/* <meta name="twitter:site" content="" /> */}
       <meta name="twitter:url" content={imgurl} />
       <meta name="twitter:title" content={title} />
       <meta
