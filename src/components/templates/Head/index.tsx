@@ -5,16 +5,22 @@ export type HeadType = {
   pagetitle?: string;
   pagedescription?: string;
   pagepath?: string;
+  pageimg?: string;
+  postimg?: string;
+  pageimgw?: string;
+  pageimgh?: string;
   keyword: string;
-  image: string;
 };
 
 export const HeadTemplate: React.FC<HeadType> = ({
   pagetitle,
   pagedescription,
   pagepath,
+  pageimg,
+  postimg,
+  pageimgw,
+  pageimgh,
   keyword,
-  image,
 }) => {
   const title = pagetitle
     ? `${pagetitle} | ${process.env.NEXT_PUBLIC_TITLE}`
@@ -25,32 +31,47 @@ export const HeadTemplate: React.FC<HeadType> = ({
   const url = pagepath
     ? `${process.env.NEXT_PUBLIC_URL}${pagepath}`
     : `${process.env.NEXT_PUBLIC_URL}`;
+  const imgurl = pageimg
+    ? `${process.env.NEXT_PUBLIC_URL}${pageimg}`
+    : postimg || `${process.env.NEXT_PUBLIC_URL}/logo.png`;
+  const imgw = pageimgw || '820px';
+  const imgh = pageimgh || '312px';
+  const fbAppId = `${process.env.FB_APP_ID}`;
 
   return (
     <Head>
+      <html lang="ja" />
       <title>{title}</title>
+      <meta
+        property="og:description"
+        content={description}
+      />
+      <meta property="og:site_name" content={title} />
       <meta property="og:title" content={title} />
       <meta
         property="og:description"
         content={description}
       />
       <meta name="keywords" content={keyword} />
-      <meta property="og:type" content="blog" />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content={title} />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="ja_JP" />
+      <meta property="fb:app_id" content={fbAppId} />
+      <meta property="og:image" content={imgurl} />
+      <meta property="og:image:width" content={imgw} />
+      <meta property="og:image:height" content={imgh} />
       <meta
         name="twitter:card"
         content="summary_large_image"
       />
       <meta name="twitter:site" content="@tcr_jp" />
-      <meta name="twitter:url" content={image} />
+      <meta name="twitter:url" content={imgurl} />
       <meta name="twitter:title" content={title} />
       <meta
         name="twitter:description"
         content={description}
       />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={imgurl} />
       <link rel="canonical" href={url} />
     </Head>
   );
