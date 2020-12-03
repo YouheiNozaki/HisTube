@@ -16,24 +16,64 @@ const Component: React.FC<Props> = ({ className }) => {
       <HeadTemplate />
       <article className={className}>
         <section className="main">
+          <Image
+            src="/mainlogo.png"
+            alt="サイトのメインロゴ"
+            width={450}
+            height={350}
+            className="main-image"
+          />
+          <div className="main-content">
+            <h1 className="main-title">
+              歴史教材をあなたのもとへ
+              <span className="main-title-span">
+                Histubeはどんな人でも歴史をテキスト、動画で無料で学べることを目指したサイトです
+              </span>
+              <span className="main-title-span">
+                高校の地歴科教員が運営をしています
+              </span>
+            </h1>
+          </div>
+        </section>
+        <section className="main">
+          <Image
+            src="/video.png"
+            alt="動画に写っている人の画像"
+            width={400}
+            height={300}
+            className="main-image"
+          />
           <div className="main-content">
             <h1 className="main-title">
               動画で歴史を楽しく
               <span className="main-title-span">
-                スキマ時間に。
+                まずはYouTube動画を見て歴史を学んでみましょう。
               </span>
               <span className="main-title-span">
-                効率よく。
+                今までとは違う発見があるはずです。
               </span>
             </h1>
           </div>
+        </section>
+        <section className="main">
           <Image
-            src="/main.svg"
-            alt="サイトのメイン画像"
-            width={500}
-            height={400}
+            src="/study.png"
+            alt="Textを眺めている人の画像"
+            width={400}
+            height={300}
             className="main-image"
           />
+          <div className="main-content">
+            <h1 className="main-title">
+              テキストで学ぶ
+              <span className="main-title-span">
+                テキストでは歴史の概要について解説しています。学び直しやテスト対策に最適です。
+              </span>
+              <span className="main-title-span">
+                チェックリストで理解度をチェックしてみましょう
+              </span>
+            </h1>
+          </div>
         </section>
         <section className="main-link">
           <h2 className="main-link-heading">
@@ -78,34 +118,59 @@ const Component: React.FC<Props> = ({ className }) => {
 };
 
 const StyledComponent = styled(Component)`
-  margin: 8px;
-  padding: 8px;
+  max-width: 960px;
+  margin: 8px auto;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   & .main {
+    padding: 24px;
+    height: 100%;
     @media (min-width: 560px) {
       display: flex;
       padding: 24px;
       margin: 0 auto;
     }
   }
+  & .main:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  & .main-image {
+    align-self: center;
+    margin: 0 auto;
+  }
+  & .main-content {
+    align-self: center;
+  }
   & .main-title {
     margin-top: 32px;
-    font-size: ${(props) => props.theme.fontSizes['4xl']};
+    font-weight: ${(props) =>
+      props.theme.fontWeights.semibold};
+    font-size: ${(props) => props.theme.fontSizes['2xl']};
     color: ${(props) => props.theme.colors.purple[900]};
     @media (min-width: 560px) {
-      font-size: ${(props) => props.theme.fontSizes['5xl']};
+      font-size: ${(props) => props.theme.fontSizes['3xl']};
+    }
+    @media (min-width: 960px) {
+      font-size: ${(props) => props.theme.fontSizes['4xl']};
     }
   }
   & .main-title-span {
     display: block;
     margin-top: 8px;
-    font-size: ${(props) => props.theme.fontSizes['2xl']};
+    margin-left: 8px;
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    font-size: ${(props) => props.theme.fontSizes.md};
     font-weight: ${(props) =>
-      props.theme.fontWeights.semibold};
+      props.theme.fontWeights.light};
     color: ${(props) => props.theme.colors.purple[600]};
     @media (min-width: 560px) {
-      font-size: ${(props) => props.theme.fontSizes['3xl']};
+      font-size: ${(props) => props.theme.fontSizes.md};
+      margin-top: 12px;
+    }
+    @media (min-width: 960px) {
+      font-size: ${(props) => props.theme.fontSizes.lg};
       margin-top: 12px;
     }
   }
