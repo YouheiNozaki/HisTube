@@ -19,8 +19,8 @@ const Component: React.FC<Props> = ({ className }) => {
           <Image
             src="/mainlogo.png"
             alt="サイトのメインロゴ"
-            width={500}
-            height={400}
+            width={450}
+            height={350}
             className="main-image"
           />
           <div className="main-content">
@@ -149,6 +149,9 @@ const StyledComponent = styled(Component)`
     font-size: ${(props) => props.theme.fontSizes['2xl']};
     color: ${(props) => props.theme.colors.purple[900]};
     @media (min-width: 560px) {
+      font-size: ${(props) => props.theme.fontSizes['3xl']};
+    }
+    @media (min-width: 960px) {
       font-size: ${(props) => props.theme.fontSizes['4xl']};
     }
   }
@@ -163,6 +166,10 @@ const StyledComponent = styled(Component)`
       props.theme.fontWeights.light};
     color: ${(props) => props.theme.colors.purple[600]};
     @media (min-width: 560px) {
+      font-size: ${(props) => props.theme.fontSizes.md};
+      margin-top: 12px;
+    }
+    @media (min-width: 960px) {
       font-size: ${(props) => props.theme.fontSizes.lg};
       margin-top: 12px;
     }
