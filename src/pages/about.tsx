@@ -125,6 +125,7 @@ const StyledComponent = styled(Component)`
   flex-direction: column;
   & .main {
     padding: 24px;
+    height: 100%;
     @media (min-width: 560px) {
       display: flex;
       padding: 24px;
@@ -135,12 +136,17 @@ const StyledComponent = styled(Component)`
     flex-direction: row-reverse;
   }
   & .main-image {
+    align-self: center;
+    margin: 0 auto;
+  }
+  & .main-content {
+    align-self: center;
   }
   & .main-title {
     margin-top: 32px;
     font-weight: ${(props) =>
       props.theme.fontWeights.semibold};
-    font-size: ${(props) => props.theme.fontSizes['3xl']};
+    font-size: ${(props) => props.theme.fontSizes['2xl']};
     color: ${(props) => props.theme.colors.purple[900]};
     @media (min-width: 560px) {
       font-size: ${(props) => props.theme.fontSizes['4xl']};
@@ -152,7 +158,7 @@ const StyledComponent = styled(Component)`
     margin-left: 8px;
     line-height: 1.7;
     letter-spacing: 0.05em;
-    font-size: ${(props) => props.theme.fontSizes.lg};
+    font-size: ${(props) => props.theme.fontSizes.md};
     font-weight: ${(props) =>
       props.theme.fontWeights.light};
     color: ${(props) => props.theme.colors.purple[600]};
