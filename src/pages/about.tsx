@@ -19,13 +19,13 @@ const Component: React.FC<Props> = ({ className }) => {
           <Image
             src="/mainlogo.png"
             alt="サイトのメイン画像"
-            width={500}
-            height={400}
-            className="main-image"
+            width={600}
+            height={500}
+            className="main-videosection-image"
           />
           <div className="main-videosection-content">
             <h1 className="main-videosection-title">
-              歴史を動画とテキストであなたのもとへ
+              歴史をあなたのもとへ
               <span className="main-videosection-title-span">
                 Histubeはどんな環境の人でも歴史を無料で学べることを目指したサイトです
               </span>
@@ -36,6 +36,13 @@ const Component: React.FC<Props> = ({ className }) => {
           </div>
         </section>
         <section className="main-videosection">
+          <Image
+            src="/main.svg"
+            alt="サイトのメイン画像"
+            width={400}
+            height={300}
+            className="main-videosection-image"
+          />
           <div className="main-videosection-content">
             <h1 className="main-videosection-title">
               動画で歴史を楽しく
@@ -47,13 +54,6 @@ const Component: React.FC<Props> = ({ className }) => {
               </span>
             </h1>
           </div>
-          <Image
-            src="/main.svg"
-            alt="サイトのメイン画像"
-            width={500}
-            height={400}
-            className="main-image"
-          />
         </section>
         <section className="main-link">
           <h2 className="main-link-heading">
@@ -111,14 +111,16 @@ const StyledComponent = styled(Component)`
       margin: 0 auto;
     }
   }
+  & .main-videosection-image {
+  }
   & .main-videosection-title {
     margin-top: 32px;
     font-weight: ${(props) =>
       props.theme.fontWeights.semibold};
-    font-size: ${(props) => props.theme.fontSizes['4xl']};
+    font-size: ${(props) => props.theme.fontSizes['3xl']};
     color: ${(props) => props.theme.colors.purple[900]};
     @media (min-width: 560px) {
-      font-size: ${(props) => props.theme.fontSizes['5xl']};
+      font-size: ${(props) => props.theme.fontSizes['4xl']};
     }
   }
   & .main-videosection-title-span {
