@@ -17,7 +17,7 @@ const Component: React.FC<Props> = ({ className }) => {
       <article className={className}>
         <section className="main-videosection">
           <Image
-            src="/logo.png"
+            src="/mainlogo.png"
             alt="サイトのメイン画像"
             width={500}
             height={400}
