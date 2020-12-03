@@ -15,42 +15,62 @@ const Component: React.FC<Props> = ({ className }) => {
     <Layout>
       <HeadTemplate />
       <article className={className}>
-        <section className="main-videosection">
+        <section className="main">
           <Image
             src="/mainlogo.png"
-            alt="サイトのメイン画像"
-            width={600}
-            height={500}
-            className="main-videosection-image"
+            alt="サイトのメインロゴ"
+            width={500}
+            height={400}
+            className="main-image"
           />
-          <div className="main-videosection-content">
-            <h1 className="main-videosection-title">
-              歴史をあなたのもとへ
-              <span className="main-videosection-title-span">
-                Histubeはどんな環境の人でも歴史を無料で学べることを目指したサイトです
+          <div className="main-content">
+            <h1 className="main-title">
+              歴史教材をあなたのもとへ
+              <span className="main-title-span">
+                Histubeはどんな人でも歴史をテキスト、動画で無料で学べることを目指したサイトです
               </span>
-              <span className="main-videosection-title-span">
+              <span className="main-title-span">
                 高校の地歴科教員が運営をしています
               </span>
             </h1>
           </div>
         </section>
-        <section className="main-videosection">
+        <section className="main">
           <Image
-            src="/main.svg"
-            alt="サイトのメイン画像"
+            src="/video.png"
+            alt="動画に写っている人の画像"
             width={400}
             height={300}
-            className="main-videosection-image"
+            className="main-image"
           />
-          <div className="main-videosection-content">
-            <h1 className="main-videosection-title">
+          <div className="main-content">
+            <h1 className="main-title">
               動画で歴史を楽しく
-              <span className="main-videosection-title-span">
-                まずは動画を見てみましょう
+              <span className="main-title-span">
+                まずはYouTube動画を見て歴史を学んでみましょう。
               </span>
-              <span className="main-videosection-title-span">
-                今までとは違う発見があるはずです
+              <span className="main-title-span">
+                今までとは違う発見があるはずです。
+              </span>
+            </h1>
+          </div>
+        </section>
+        <section className="main">
+          <Image
+            src="/study.png"
+            alt="Textを眺めている人の画像"
+            width={400}
+            height={300}
+            className="main-image"
+          />
+          <div className="main-content">
+            <h1 className="main-title">
+              テキストで学ぶ
+              <span className="main-title-span">
+                テキストでは歴史の概要について解説しています。学び直しやテスト対策に最適です。
+              </span>
+              <span className="main-title-span">
+                チェックリストで理解度をチェックしてみましょう
               </span>
             </h1>
           </div>
@@ -103,7 +123,7 @@ const StyledComponent = styled(Component)`
   padding: 16px;
   display: flex;
   flex-direction: column;
-  & .main-videosection {
+  & .main {
     padding: 24px;
     @media (min-width: 560px) {
       display: flex;
@@ -111,9 +131,12 @@ const StyledComponent = styled(Component)`
       margin: 0 auto;
     }
   }
-  & .main-videosection-image {
+  & .main:nth-child(even) {
+    flex-direction: row-reverse;
   }
-  & .main-videosection-title {
+  & .main-image {
+  }
+  & .main-title {
     margin-top: 32px;
     font-weight: ${(props) =>
       props.theme.fontWeights.semibold};
@@ -123,7 +146,7 @@ const StyledComponent = styled(Component)`
       font-size: ${(props) => props.theme.fontSizes['4xl']};
     }
   }
-  & .main-videosection-title-span {
+  & .main-title-span {
     display: block;
     margin-top: 8px;
     margin-left: 8px;
