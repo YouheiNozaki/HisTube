@@ -15,15 +15,35 @@ const Component: React.FC<Props> = ({ className }) => {
     <Layout>
       <HeadTemplate />
       <article className={className}>
-        <section className="main">
-          <div className="main-content">
-            <h1 className="main-title">
-              動画で歴史を楽しく
-              <span className="main-title-span">
-                スキマ時間に。
+        <section className="main-videosection">
+          <Image
+            src="/logo.png"
+            alt="サイトのメイン画像"
+            width={500}
+            height={400}
+            className="main-image"
+          />
+          <div className="main-videosection-content">
+            <h1 className="main-videosection-title">
+              歴史を動画とテキストであなたのもとへ
+              <span className="main-videosection-title-span">
+                Histubeはどんな環境の人でも歴史を無料で学べることを目指したサイトです
               </span>
-              <span className="main-title-span">
-                効率よく。
+              <span className="main-videosection-title-span">
+                高校の地歴科教員が運営をしています
+              </span>
+            </h1>
+          </div>
+        </section>
+        <section className="main-videosection">
+          <div className="main-videosection-content">
+            <h1 className="main-videosection-title">
+              動画で歴史を楽しく
+              <span className="main-videosection-title-span">
+                まずは動画を見てみましょう
+              </span>
+              <span className="main-videosection-title-span">
+                今までとは違う発見があるはずです
               </span>
             </h1>
           </div>
@@ -78,34 +98,41 @@ const Component: React.FC<Props> = ({ className }) => {
 };
 
 const StyledComponent = styled(Component)`
-  margin: 8px;
-  padding: 8px;
+  max-width: 960px;
+  margin: 8px auto;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  & .main {
+  & .main-videosection {
+    padding: 24px;
     @media (min-width: 560px) {
       display: flex;
       padding: 24px;
       margin: 0 auto;
     }
   }
-  & .main-title {
+  & .main-videosection-title {
     margin-top: 32px;
+    font-weight: ${(props) =>
+      props.theme.fontWeights.semibold};
     font-size: ${(props) => props.theme.fontSizes['4xl']};
     color: ${(props) => props.theme.colors.purple[900]};
     @media (min-width: 560px) {
       font-size: ${(props) => props.theme.fontSizes['5xl']};
     }
   }
-  & .main-title-span {
+  & .main-videosection-title-span {
     display: block;
     margin-top: 8px;
-    font-size: ${(props) => props.theme.fontSizes['2xl']};
+    margin-left: 8px;
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    font-size: ${(props) => props.theme.fontSizes.lg};
     font-weight: ${(props) =>
-      props.theme.fontWeights.semibold};
+      props.theme.fontWeights.light};
     color: ${(props) => props.theme.colors.purple[600]};
     @media (min-width: 560px) {
-      font-size: ${(props) => props.theme.fontSizes['3xl']};
+      font-size: ${(props) => props.theme.fontSizes.lg};
       margin-top: 12px;
     }
   }
