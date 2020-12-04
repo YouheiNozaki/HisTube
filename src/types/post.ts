@@ -29,4 +29,7 @@ export type PostType = {
 
 export type PostsType = {
   contents: PostType[];
+  totalCount: number;
+  offset: number;
+  limit: number;
 };

@@ -18,6 +18,17 @@ export const getStaticProps: GetStaticProps<{
   posts: PostType[];
 }> = async () => {
   const posts = await http<PostsType>(request);
+  // const { totalCount } = res;
+  // const limit = 6;
+
+  // const posts = await http<PostsType>(
+  //   `https://education-video.microcms.io/api/v1/posts?limit=${limit}totalCount=${totalCount}`,
+  //   {
+  //     headers: {
+  //       'X-API-KEY': `${process.env.X_API_KEY}`,
+  //     },
+  //   },
+  // );
 
   return {
     props: {
