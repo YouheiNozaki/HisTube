@@ -25,8 +25,33 @@ const Component: React.FC<Props> = ({
         </ul>
       </div>
       <p className="footer-copywrite">
-        {' '}
-        <small>&copy;2020 History Tube</small>
+        {/* {' '}
+        <small>&copy;2020 History Tube</small> */}
+        <a
+          rel="license"
+          href="http://creativecommons.org/licenses/by-nc/4.0/"
+          className="footer-copywrite-image"
+        >
+          <img
+            alt="クリエイティブ・コモンズ・ライセンス"
+            src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"
+          />
+        </a>
+        <br />
+        <div>
+          この サイトの作品 は{' '}
+          <a
+            rel="license"
+            href="http://creativecommons.org/licenses/by-nc/4.0/"
+          >
+            クリエイティブ・コモンズ 表示 - 非営利 4.0 国際
+            ライセンス
+          </a>
+          の下に提供されています。
+          <br />
+          各ページのYouTube
+          動画については著作権は製作者に帰属します。
+        </div>
       </p>
     </footer>
   );
@@ -55,9 +80,14 @@ const StyledFooter = styled(Component)`
     cursor: pointer;
   }
   & .footer-copywrite {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto 20px;
     color: ${(props) => props.theme.colors.gray[500]};
     font-size: ${(props) => props.theme.fontSizes.xs};
+  }
+  & .footer-copywrite-image {
+    margin: 0 auto;
   }
 `;
 
