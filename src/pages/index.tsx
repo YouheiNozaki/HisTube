@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 
-import { http, request } from 'lib/fetch';
+import { http } from 'lib/fetch';
 import { Layout } from 'components/templates/layout';
 import { Card } from 'components/templates/Card';
 import { Heading } from 'components/atoms/Heading';
@@ -17,7 +17,16 @@ type Props = {
 export const getStaticProps: GetStaticProps<{
   posts: PostType[];
 }> = async () => {
-  const posts = await http<PostsType>(request);
+  // とりあえずlimitを増やす対応
+  const limit = 20;
+  const posts = await http<PostsType>(
+    `https://education-video.microcms.io/api/v1/posts?limit=${limit}`,
+    {
+      headers: {
+        'X-API-KEY': `${process.env.X_API_KEY}`,
+      },
+    },
+  );
   // const { totalCount } = res;
   // const limit = 6;
 
