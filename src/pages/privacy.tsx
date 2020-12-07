@@ -129,9 +129,9 @@ const Component: React.FC<Props> = ({ className }) => {
 };
 
 const StyledComponent = styled(Component)`
-  margin: 16px;
+  margin: 16px auto;
   padding: 16px;
-  max-width: 1024px;
+  max-width: 960px;
   ul > li {
     list-style: none;
     line-height: 1.7;

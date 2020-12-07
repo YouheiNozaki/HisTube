@@ -61,6 +61,7 @@ const StyledFooter = styled(Component)`
   margin: 40px 20px;
   display: flex;
   flex-direction: column;
+  line-height: 1.7;
   & .footer-terms-list {
     display: flex;
     justify-content: center;
