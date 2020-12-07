@@ -71,8 +71,9 @@ const StyledComponent = styled(Component)`
   & .card-image {
     overflow: hidden;
     @media (min-width: 560px) {
-      max-width: 60%;
+      max-width: 45%;
       margin: 0 16px;
+      align-self: center;
     }
   }
   & .card-image > img {
@@ -84,7 +85,8 @@ const StyledComponent = styled(Component)`
   }
   & .card-content {
     @media (min-width: 560px) {
-      max-width: 35%;
+      max-width: 50%;
+      padding-left: 16px;
     }
   }
   & .card-heading {
