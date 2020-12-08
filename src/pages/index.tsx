@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 
@@ -59,14 +60,16 @@ const Component: React.FC<Props> = ({
         </div>
         {posts.map((post) => {
           return (
-            <Card
-              id={`posts/${post.id}`}
-              title={post.title}
-              tag={post.tag}
-              createdAt={post.createdAt}
-              updatedAt={post.updatedAt}
-              url={post.image.url}
-            />
+            <Fragment key={post.id}>
+              <Card
+                id={post.id}
+                title={post.title}
+                tag={post.tag}
+                createdAt={post.createdAt}
+                updatedAt={post.updatedAt}
+                url={post.image.url}
+              />
+            </Fragment>
           );
         })}
       </div>
