@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps<{
 ) => {
   const { id } = context.params;
   const post = await http<PostType>(
-    `https://education-video.microcms.io/api/v1/posts/${id}`,
+    `${process.env.API_BASE_URL}posts/${id}`,
     {
       headers: {
         'X-API-KEY': `${process.env.X_API_KEY}`,

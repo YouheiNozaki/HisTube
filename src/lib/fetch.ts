@@ -11,7 +11,7 @@ export async function http<T>(
 }
 
 export const request = new Request(
-  'https://education-video.microcms.io/api/v1/posts',
+  `${process.env.API_BASE_URL}posts`,
   {
     headers: {
       'X-API-KEY': `${process.env.X_API_KEY}`,

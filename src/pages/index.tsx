@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<{
   // とりあえずlimitを増やす対応
   const limit = 20;
   const posts = await http<PostsType>(
-    `https://education-video.microcms.io/api/v1/posts?limit=${limit}`,
+    `${process.env.API_BASE_URL}posts?limit=${limit}`,
     {
       headers: {
         'X-API-KEY': `${process.env.X_API_KEY}`,
