@@ -21,37 +21,35 @@ const Component: React.FC<Props> = ({
 }) => {
   return (
     <section className={className}>
-      <Fragment key={id}>
-        <div className="card">
-          <Link href={id}>
-            <a className="card-image">
-              <img src={url} alt={title} />
-            </a>
-          </Link>
-          <div className="card-content">
-            <h2 className="card-heading">{title}</h2>
-            <div className="card-tags">
-              {tag.map((t) => {
-                return (
-                  <Fragment key={t.id}>
-                    <p>{t.name}</p>
-                  </Fragment>
-                );
-              })}
-            </div>
-            <div className="card-day">
-              <p>
-                作成日:
-                {dayjs(createdAt).format('YYYY/MM/DD')}
-              </p>
-              <p>
-                更新日:
-                {dayjs(updatedAt).format('YYYY/MM/DD')}
-              </p>
-            </div>
+      <div className="card">
+        <Link href={`posts/${id}`}>
+          <a className="card-image">
+            <img src={url} alt={title} />
+          </a>
+        </Link>
+        <div className="card-content">
+          <h2 className="card-heading">{title}</h2>
+          <div className="card-tags">
+            {tag.map((t) => {
+              return (
+                <Fragment key={t.id}>
+                  <p>{t.name}</p>
+                </Fragment>
+              );
+            })}
+          </div>
+          <div className="card-day">
+            <p>
+              作成日:
+              {dayjs(createdAt).format('YYYY/MM/DD')}
+            </p>
+            <p>
+              更新日:
+              {dayjs(updatedAt).format('YYYY/MM/DD')}
+            </p>
           </div>
         </div>
-      </Fragment>
+      </div>
     </section>
   );
 };

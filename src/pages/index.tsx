@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 
@@ -20,7 +21,7 @@ export const getStaticProps: GetStaticProps<{
   // とりあえずlimitを増やす対応
   const limit = 20;
   const posts = await http<PostsType>(
-    `https://education-video.microcms.io/api/v1/posts?limit=${limit}`,
+    `${process.env.API_BASE_URL}posts?limit=${limit}`,
     {
       headers: {
         'X-API-KEY': `${process.env.X_API_KEY}`,
@@ -59,14 +60,16 @@ const Component: React.FC<Props> = ({
         </div>
         {posts.map((post) => {
           return (
-            <Card
-              id={`posts/${post.id}`}
-              title={post.title}
-              tag={post.tag}
-              createdAt={post.createdAt}
-              updatedAt={post.updatedAt}
-              url={post.image.url}
-            />
+            <Fragment key={post.id}>
+              <Card
+                id={post.id}
+                title={post.title}
+                tag={post.tag}
+                createdAt={post.createdAt}
+                updatedAt={post.updatedAt}
+                url={post.image.url}
+              />
+            </Fragment>
           );
         })}
       </div>
