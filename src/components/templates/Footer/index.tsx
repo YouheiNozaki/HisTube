@@ -24,9 +24,7 @@ const Component: React.FC<Props> = ({
           </Link>
         </ul>
       </div>
-      <p className="footer-copywrite">
-        {/* {' '}
-        <small>&copy;2020 History Tube</small> */}
+      <div className="footer-copywrite">
         <a
           rel="license"
           href="http://creativecommons.org/licenses/by-nc/4.0/"
@@ -38,7 +36,7 @@ const Component: React.FC<Props> = ({
           />
         </a>
         <br />
-        <div>
+        <p>
           この サイトの作品 は{' '}
           <a
             rel="license"
@@ -51,8 +49,8 @@ const Component: React.FC<Props> = ({
           <br />
           各ページのYouTube
           動画については著作権は製作者に帰属します。
-        </div>
-      </p>
+        </p>
+      </div>
     </footer>
   );
 };
