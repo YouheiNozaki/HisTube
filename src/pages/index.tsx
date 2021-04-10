@@ -50,32 +50,28 @@ export const getStaticProps: GetStaticProps<{
 const Component: React.FC<Props> = ({
   posts,
   className,
-}) => {
-  return (
-    <Layout>
-      <HeadTemplate />
-      <div className={className}>
-        <div className="posts-heading">
-          <Heading text="動画一覧" />
-        </div>
-        {posts.map((post) => {
-          return (
-            <Fragment key={post.id}>
-              <Card
-                id={post.id}
-                title={post.title}
-                tag={post.tag}
-                createdAt={post.createdAt}
-                updatedAt={post.updatedAt}
-                url={post.image.url}
-              />
-            </Fragment>
-          );
-        })}
+}) => (
+  <Layout>
+    <HeadTemplate />
+    <div className={className}>
+      <div className="posts-heading">
+        <Heading text="動画一覧" />
       </div>
-    </Layout>
-  );
-};
+      {posts.map((post) => (
+        <Fragment key={post.id}>
+          <Card
+            id={post.id}
+            title={post.title}
+            tag={post.tag}
+            createdAt={post.createdAt}
+            updatedAt={post.updatedAt}
+            url={post.image.url}
+          />
+        </Fragment>
+      ))}
+    </div>
+  </Layout>
+);
 
 const StyledComponent = styled(Component)`
   margin: 8px auto;
