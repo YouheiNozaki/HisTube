@@ -8,15 +8,13 @@ type Props = {
 
 const Component: React.FC<Props> = ({
   className,
-}): JSX.Element => {
-  return (
-    <nav className={className}>
-      <EffectLink text="一覧" url="/" />
-      <EffectLink text="世界史" url="/" />
-      <EffectLink text="サイトについて" url="/about" />
-    </nav>
-  );
-};
+}): JSX.Element => (
+  <nav className={className}>
+    <EffectLink text="一覧" url="/" />
+    <EffectLink text="世界史" url="/" />
+    <EffectLink text="サイトについて" url="/about" />
+  </nav>
+);
 
 const StyledComponent = styled(Component)`
   display: flex;

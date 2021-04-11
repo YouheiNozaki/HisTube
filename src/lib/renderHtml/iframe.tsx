@@ -7,13 +7,11 @@ type Props = {
 const Component: React.FC<Props> = ({
   className,
   children,
-}): JSX.Element => {
-  return (
-    <div className={className}>
-      <iframe {...children} title="タイトル動画" />
-    </div>
-  );
-};
+}): JSX.Element => (
+  <div className={className}>
+    <iframe {...children} title="タイトル動画" />
+  </div>
+);
 
 const StyledComponent = styled(Component)`
   position: relative;

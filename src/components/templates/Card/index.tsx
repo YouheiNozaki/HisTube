@@ -18,41 +18,37 @@ const Component: React.FC<Props> = ({
   tag,
   url,
   className,
-}) => {
-  return (
-    <section className={className}>
-      <div className="card">
-        <Link href={`posts/${id}`}>
-          <a className="card-image">
-            <img src={url} alt={title} />
-          </a>
-        </Link>
-        <div className="card-content">
-          <h2 className="card-heading">{title}</h2>
-          <div className="card-tags">
-            {tag.map((t) => {
-              return (
-                <Fragment key={t.id}>
-                  <p>{t.name}</p>
-                </Fragment>
-              );
-            })}
-          </div>
-          <div className="card-day">
-            <p>
-              作成日:
-              {dayjs(createdAt).format('YYYY/MM/DD')}
-            </p>
-            <p>
-              更新日:
-              {dayjs(updatedAt).format('YYYY/MM/DD')}
-            </p>
-          </div>
+}) => (
+  <section className={className}>
+    <div className="card">
+      <Link href={`posts/${id}`}>
+        <a className="card-image">
+          <img src={url} alt={title} />
+        </a>
+      </Link>
+      <div className="card-content">
+        <h2 className="card-heading">{title}</h2>
+        <div className="card-tags">
+          {tag.map((t) => (
+            <Fragment key={t.id}>
+              <p>{t.name}</p>
+            </Fragment>
+          ))}
+        </div>
+        <div className="card-day">
+          <p>
+            作成日:
+            {dayjs(createdAt).format('YYYY/MM/DD')}
+          </p>
+          <p>
+            更新日:
+            {dayjs(updatedAt).format('YYYY/MM/DD')}
+          </p>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 const StyledComponent = styled(Component)`
   margin: 12px;

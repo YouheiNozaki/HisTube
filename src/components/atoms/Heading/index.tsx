@@ -8,9 +8,7 @@ type Props = {
 const Component: React.FC<Props> = ({
   className,
   text,
-}): JSX.Element => {
-  return <h1 className={className}>{text}</h1>;
-};
+}): JSX.Element => <h1 className={className}>{text}</h1>;
 
 const StyledComponent = styled(Component)`
   font-size: 28px;

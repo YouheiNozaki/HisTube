@@ -8,9 +8,7 @@ type Props = {
 const Component: React.FC<Props> = ({
   className,
   children,
-}): JSX.Element => {
-  return <p className={className}>{children}</p>;
-};
+}): JSX.Element => <p className={className}>{children}</p>;
 
 const StyledComponent = styled(Component)`
   line-height: 1.7;

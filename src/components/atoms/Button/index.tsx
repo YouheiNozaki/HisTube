@@ -8,13 +8,11 @@ type Props = {
 const Component: React.FC<Props> = ({
   className,
   text,
-}): JSX.Element => {
-  return (
-    <button className={className} type="button">
-      {text}
-    </button>
-  );
-};
+}): JSX.Element => (
+  <button className={className} type="button">
+    {text}
+  </button>
+);
 
 const StyledComponent = styled(Component)`
   padding: 8px 20px;

@@ -11,15 +11,13 @@ const Component: React.FC<Props> = ({
   className,
   text,
   url,
-}): JSX.Element => {
-  return (
-    <Link href={url}>
-      <a className={className} href={url}>
-        {text}
-      </a>
-    </Link>
-  );
-};
+}): JSX.Element => (
+  <Link href={url}>
+    <a className={className} href={url}>
+      {text}
+    </a>
+  </Link>
+);
 
 const StyledComponent = styled(Component)`
   color: ${(props) => props.theme.colors.purple[700]};

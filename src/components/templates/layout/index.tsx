@@ -11,16 +11,14 @@ type Props = {
 const Component: React.FC<Props> = ({
   className,
   children,
-}): JSX.Element => {
-  return (
-    <div className={className}>
-      <Header />
-      <Nav />
-      {children}
-      <Footer />
-    </div>
-  );
-};
+}): JSX.Element => (
+  <div className={className}>
+    <Header />
+    <Nav />
+    {children}
+    <Footer />
+  </div>
+);
 
 const StyledLayout = styled(Component)``;
 

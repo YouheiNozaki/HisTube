@@ -8,9 +8,9 @@ type Props = {
 const Component: React.FC<Props> = ({
   className,
   children,
-}): JSX.Element => {
-  return <strong className={className}>{children}</strong>;
-};
+}): JSX.Element => (
+  <strong className={className}>{children}</strong>
+);
 
 const StyledComponent = styled(Component)`
   background: linear-gradient(
