@@ -7,24 +7,22 @@ export type Props = {
   className?: string;
 };
 
-const Component: React.FC<Props> = ({ className }) => {
-  return (
-    <header className={className}>
-      <div className="header-logo">
-        <Link href="/">
-          <a href="/">
-            <Image
-              src="/logo.png"
-              alt="サイトのロゴ"
-              width={140}
-              height={40}
-            />
-          </a>
-        </Link>
-      </div>
-    </header>
-  );
-};
+const Component: React.FC<Props> = ({ className }) => (
+  <header className={className}>
+    <div className="header-logo">
+      <Link href="/">
+        <a href="/">
+          <Image
+            src="/logo.png"
+            alt="サイトのロゴ"
+            width={140}
+            height={40}
+          />
+        </a>
+      </Link>
+    </div>
+  </header>
+);
 
 const StyledComponent: React.FC = styled(Component)`
   position: sticky;

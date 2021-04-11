@@ -4,13 +4,11 @@ type Props = {
   className?: string;
 };
 
-const Component: React.FC<Props> = ({ className }) => {
-  return (
-    <div className={className}>
-      <div className="loader">Loading...</div>
-    </div>
-  );
-};
+const Component: React.FC<Props> = ({ className }) => (
+  <div className={className}>
+    <div className="loader">Loading...</div>
+  </div>
+);
 
 const StyledComponent = styled(Component)`
   .loader,

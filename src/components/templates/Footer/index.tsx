@@ -7,53 +7,51 @@ export type Props = {
 
 const Component: React.FC<Props> = ({
   className,
-}): JSX.Element => {
-  return (
-    <footer className={className}>
-      <div>
-        <ul className="footer-terms-list">
-          <Link href="/terms">
-            <a href="/terms">
-              <li>利用規約</li>
-            </a>
-          </Link>
-          <Link href="/privacy">
-            <a href="/privacy">
-              <li>プライバシーポリシー</li>
-            </a>
-          </Link>
-        </ul>
-      </div>
-      <div className="footer-copywrite">
+}): JSX.Element => (
+  <footer className={className}>
+    <div>
+      <ul className="footer-terms-list">
+        <Link href="/terms">
+          <a href="/terms">
+            <li>利用規約</li>
+          </a>
+        </Link>
+        <Link href="/privacy">
+          <a href="/privacy">
+            <li>プライバシーポリシー</li>
+          </a>
+        </Link>
+      </ul>
+    </div>
+    <div className="footer-copywrite">
+      <a
+        rel="license"
+        href="http://creativecommons.org/licenses/by-nc/4.0/"
+        className="footer-copywrite-image"
+      >
+        <img
+          alt="クリエイティブ・コモンズ・ライセンス"
+          src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"
+        />
+      </a>
+      <br />
+      <p>
+        この サイトの作品 は{' '}
         <a
           rel="license"
           href="http://creativecommons.org/licenses/by-nc/4.0/"
-          className="footer-copywrite-image"
         >
-          <img
-            alt="クリエイティブ・コモンズ・ライセンス"
-            src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"
-          />
+          クリエイティブ・コモンズ 表示 - 非営利 4.0 国際
+          ライセンス
         </a>
+        の下に提供されています。
         <br />
-        <p>
-          この サイトの作品 は{' '}
-          <a
-            rel="license"
-            href="http://creativecommons.org/licenses/by-nc/4.0/"
-          >
-            クリエイティブ・コモンズ 表示 - 非営利 4.0 国際
-            ライセンス
-          </a>
-          の下に提供されています。
-          <br />
-          各ページのYouTube
-          動画については著作権は製作者に帰属します。
-        </p>
-      </div>
-    </footer>
-  );
-};
+        各ページのYouTube
+        動画については著作権は製作者に帰属します。
+      </p>
+    </div>
+  </footer>
+);
 
 const StyledFooter = styled(Component)`
   margin: 40px 20px;

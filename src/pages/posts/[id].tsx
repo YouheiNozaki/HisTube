@@ -22,13 +22,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await http<PostsType>(request);
 
   return {
-    paths: posts.contents.map((post) => {
-      return {
-        params: {
-          id: post.id,
-        },
-      };
-    }),
+    paths: posts.contents.map((post) => ({
+      params: {
+        id: post.id,
+      },
+    })),
     fallback: true,
   };
 };

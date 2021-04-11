@@ -10,112 +10,110 @@ type Props = {
   className?: string;
 };
 
-const Component: React.FC<Props> = ({ className }) => {
-  return (
-    <Layout>
-      <HeadTemplate />
-      <article className={className}>
-        <section className="main">
-          <Image
-            src="/mainlogo.png"
-            alt="サイトのメインロゴ"
-            width={450}
-            height={350}
-            className="main-image"
-          />
-          <div className="main-content">
-            <h1 className="main-title">
-              歴史教材をあなたのもとへ
-              <span className="main-title-span">
-                Histubeはどんな人でも歴史をテキスト、動画で無料で学べることを目指したサイトです
-              </span>
-              <span className="main-title-span">
-                高校の地歴科教員が運営をしています
-              </span>
-            </h1>
+const Component: React.FC<Props> = ({ className }) => (
+  <Layout>
+    <HeadTemplate />
+    <article className={className}>
+      <section className="main">
+        <Image
+          src="/mainlogo.png"
+          alt="サイトのメインロゴ"
+          width={450}
+          height={350}
+          className="main-image"
+        />
+        <div className="main-content">
+          <h1 className="main-title">
+            歴史教材をあなたのもとへ
+            <span className="main-title-span">
+              Histubeはどんな人でも歴史をテキスト、動画で無料で学べることを目指したサイトです
+            </span>
+            <span className="main-title-span">
+              高校の地歴科教員が運営をしています
+            </span>
+          </h1>
+        </div>
+      </section>
+      <section className="main">
+        <Image
+          src="/video.png"
+          alt="動画に写っている人の画像"
+          width={400}
+          height={300}
+          className="main-image"
+        />
+        <div className="main-content">
+          <h1 className="main-title">
+            動画で歴史を楽しく
+            <span className="main-title-span">
+              まずはYouTube動画を見て歴史を学んでみましょう。
+            </span>
+            <span className="main-title-span">
+              今までとは違う発見があるはずです。
+            </span>
+          </h1>
+        </div>
+      </section>
+      <section className="main">
+        <Image
+          src="/study.png"
+          alt="Textを眺めている人の画像"
+          width={400}
+          height={300}
+          className="main-image"
+        />
+        <div className="main-content">
+          <h1 className="main-title">
+            テキストで学ぶ
+            <span className="main-title-span">
+              テキストでは歴史の概要について解説しています。学び直しやテスト対策に最適です。
+            </span>
+            <span className="main-title-span">
+              チェックリストで理解度をチェックしてみましょう
+            </span>
+          </h1>
+        </div>
+      </section>
+      <section className="main-link">
+        <h2 className="main-link-heading">
+          さあ、はじめよう！！
+        </h2>
+        <Link href="/">
+          <a href="/">
+            <Button
+              text="動画一覧を見る"
+              className="main-link-button"
+            />
+          </a>
+        </Link>
+      </section>
+      <section className="main-intro">
+        <h3 className="main-intro-heading">
+          このサイトを作った人
+        </h3>
+        <div className="main-intro-content">
+          <div className="main-intro-image">
+            <Image
+              src="/cat.png"
+              alt="自己紹介画像"
+              width={160}
+              height={160}
+              className="main-intro-image-child"
+            />
           </div>
-        </section>
-        <section className="main">
-          <Image
-            src="/video.png"
-            alt="動画に写っている人の画像"
-            width={400}
-            height={300}
-            className="main-image"
-          />
-          <div className="main-content">
-            <h1 className="main-title">
-              動画で歴史を楽しく
-              <span className="main-title-span">
-                まずはYouTube動画を見て歴史を学んでみましょう。
-              </span>
-              <span className="main-title-span">
-                今までとは違う発見があるはずです。
-              </span>
-            </h1>
+          <div className="main-intro-paragraph">
+            <p>野崎洋平</p>
+            <p>高校の地歴科教員</p>
+            <p>文学部史学科卒。</p>
+            <p>
+              愛猫と愛犬が大好き。最近はプログラミングを勉強している。
+            </p>
           </div>
-        </section>
-        <section className="main">
-          <Image
-            src="/study.png"
-            alt="Textを眺めている人の画像"
-            width={400}
-            height={300}
-            className="main-image"
-          />
-          <div className="main-content">
-            <h1 className="main-title">
-              テキストで学ぶ
-              <span className="main-title-span">
-                テキストでは歴史の概要について解説しています。学び直しやテスト対策に最適です。
-              </span>
-              <span className="main-title-span">
-                チェックリストで理解度をチェックしてみましょう
-              </span>
-            </h1>
-          </div>
-        </section>
-        <section className="main-link">
-          <h2 className="main-link-heading">
-            さあ、はじめよう！！
-          </h2>
-          <Link href="/">
-            <a href="/">
-              <Button
-                text="動画一覧を見る"
-                className="main-link-button"
-              />
-            </a>
-          </Link>
-        </section>
-        <section className="main-intro">
-          <h3 className="main-intro-heading">
-            このサイトを作った人
-          </h3>
-          <div className="main-intro-content">
-            <div className="main-intro-image">
-              <Image
-                src="/cat.png"
-                alt="自己紹介画像"
-                width={160}
-                height={160}
-                className="main-intro-image-child"
-              />
-            </div>
-            <div className="main-intro-paragraph">
-              <p>野崎洋平</p>
-              <p>高校の地歴科教員</p>
-              <p>文学部史学科卒。</p>
-              <p>
-                愛猫と愛犬が大好き。最近はプログラミングを勉強している。
-              </p>
-            </div>
-          </div>
-        </section>
-      </article>
-    </Layout>
-  );
-};
+        </div>
+      </section>
+    </article>
+  </Layout>
+);
 
 const StyledComponent = styled(Component)`
   max-width: 960px;

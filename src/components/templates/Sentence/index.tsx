@@ -15,30 +15,25 @@ type Props = {
 const Component: React.FC<Props> = ({
   className,
   content,
-}): JSX.Element => {
-  return (
-    <main className={className}>
-      {content.map((c) =>
-        c.fieldId === 'heading1' ? (
-          <Heading key={c.fieldId} text={c.heading1} />
-        ) : c.fieldId === 'heading2' ? (
-          <SecondHeading
-            key={c.fieldId}
-            text={c.heading2}
-          />
-        ) : c.fieldId === 'heading3' ? (
-          <ThirdHeading key={c.fieldId} text={c.heading3} />
-        ) : c.fieldId === 'Sentence' ? (
-          <div>{renderAst(c.sentence)}</div>
-        ) : c.fieldId === 'video' ? (
-          <div className="iframe-wrap">
-            <div>{renderAst(c.video)}</div>
-          </div>
-        ) : null,
-      )}
-    </main>
-  );
-};
+}): JSX.Element => (
+  <main className={className}>
+    {content.map((c) =>
+      c.fieldId === 'heading1' ? (
+        <Heading key={c.fieldId} text={c.heading1} />
+      ) : c.fieldId === 'heading2' ? (
+        <SecondHeading key={c.fieldId} text={c.heading2} />
+      ) : c.fieldId === 'heading3' ? (
+        <ThirdHeading key={c.fieldId} text={c.heading3} />
+      ) : c.fieldId === 'Sentence' ? (
+        <div>{renderAst(c.sentence)}</div>
+      ) : c.fieldId === 'video' ? (
+        <div className="iframe-wrap">
+          <div>{renderAst(c.video)}</div>
+        </div>
+      ) : null,
+    )}
+  </main>
+);
 
 const StyledComponent = styled(Component)`
   & .iframe-wrap {

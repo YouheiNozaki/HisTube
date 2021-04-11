@@ -70,7 +70,6 @@ export const HeadTemplate: React.FC<HeadType> = ({
         name="twitter:card"
         content="summary_large_image"
       />
-      {/* <meta name="twitter:site" content="" /> */}
       <meta name="twitter:url" content={imgurl} />
       <meta name="twitter:title" content={title} />
       <meta
